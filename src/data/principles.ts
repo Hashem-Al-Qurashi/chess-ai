@@ -4,4 +4,5 @@ export interface ChessPrinciple {
 }
 
 export const chessPrinciples: ChessPrinciple[] = [
+  { category: "Opening", tip: "Control the center with pawns e4/d4" },
 ]
