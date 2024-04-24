@@ -25,4 +25,5 @@ export const famousGames: FamousGame[] = [
   { year: 2016, white: "Caruana", black: "Carlsen", name: "Caruana's Brilliance" },
   { year: 2018, white: "Carlsen", black: "Caruana", name: "WC Tiebreak" },
   { year: 1851, white: "Anderssen", black: "Kieseritzky", name: "The Immortal Game" },
+  { year: 1852, white: "Anderssen", black: "Dufresne", name: "The Evergreen Game" },
 ]
