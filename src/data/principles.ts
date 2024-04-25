@@ -28,4 +28,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Opposition is key in king and pawn endings" },
   { category: "Endgame", tip: "Centralize the king in the endgame" },
   { category: "Endgame", tip: "Cut off the enemy king with rooks" },
+  { category: "Endgame", tip: "Two connected passed pawns beat a rook" },
 ]
