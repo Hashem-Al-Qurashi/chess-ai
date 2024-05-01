@@ -38,4 +38,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Minority attack against pawn chains" },
   { category: "Strategy", tip: "Blockade passed pawns with knights" },
   { category: "Strategy", tip: "Exchange your bad bishop" },
+  { category: "Strategy", tip: "Create weaknesses on both flanks" },
 ]
