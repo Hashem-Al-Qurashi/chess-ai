@@ -639,4 +639,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Add Rook activity evaluation" },
   { category: "Endgame", tip: "Update Pawn movement logic notes" },
   { category: "Endgame", tip: "Add overloading puzzle example" },
+  { category: "Middlegame", tip: "Record windmill combination motif" },
 ]
