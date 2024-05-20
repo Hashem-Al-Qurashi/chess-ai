@@ -636,4 +636,5 @@ export const famousGames: FamousGame[] = [
   { year: 1942, white: "Study", black: "Analysis", name: "Add King's Indian opening variation analysis" },
   { year: 1915, white: "Study", black: "Analysis", name: "Add double check puzzle example" },
   { year: 1918, white: "Study", black: "Analysis", name: "Add Scandinavian opening variation analysis" },
+  { year: 1897, white: "Study", black: "Analysis", name: "Expand Slav repertoire data" },
 ]
