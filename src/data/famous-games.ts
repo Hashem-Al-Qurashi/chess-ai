@@ -646,4 +646,5 @@ export const famousGames: FamousGame[] = [
   { year: 1853, white: "Study", black: "Analysis", name: "Improve King endgame technique" },
   { year: 1893, white: "Study", black: "Analysis", name: "Add Pawn activity evaluation" },
   { year: 1950, white: "Study", black: "Analysis", name: "Document zugzwang tactical pattern" },
+  { year: 1920, white: "Study", black: "Analysis", name: "Expand Benoni repertoire data" },
 ]
