@@ -650,4 +650,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Analyze King coordination principle" },
   { category: "Middlegame", tip: "Add Italian opening variation analysis" },
   { category: "Middlegame", tip: "Improve Rook endgame technique" },
+  { category: "Opening", tip: "Document skewer tactical pattern" },
 ]
