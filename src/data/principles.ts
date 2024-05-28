@@ -65,4 +65,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Cut off the enemy king with rooks" },
   { category: "Endgame", tip: "Two connected passed pawns beat a rook" },
   { category: "Endgame", tip: "Triangulation to gain tempo" },
+  { category: "Strategy", tip: "Create a plan and follow it" },
 ]
