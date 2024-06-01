@@ -69,4 +69,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Prophylaxis: prevent opponent's ideas" },
   { category: "Strategy", tip: "Improve your worst-placed piece" },
   { category: "Strategy", tip: "Pawn structure determines piece placement" },
+  { category: "Strategy", tip: "Space advantage allows more maneuvering" },
 ]
