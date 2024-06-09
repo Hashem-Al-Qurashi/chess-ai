@@ -493,4 +493,5 @@ export const famousGames: FamousGame[] = [
   { year: 2016, white: "Caruana", black: "Carlsen", name: "Caruana's Brilliance" },
   { year: 2018, white: "Carlsen", black: "Caruana", name: "WC Tiebreak" },
   { year: 1976, white: "Study", black: "Analysis", name: "Improve Knight endgame technique" },
+  { year: 1972, white: "Study", black: "Analysis", name: "Improve King endgame technique" },
 ]
