@@ -495,4 +495,5 @@ export const famousGames: FamousGame[] = [
   { year: 1976, white: "Study", black: "Analysis", name: "Improve Knight endgame technique" },
   { year: 1972, white: "Study", black: "Analysis", name: "Improve King endgame technique" },
   { year: 1942, white: "Study", black: "Analysis", name: "Study Benoni middlegame plans" },
+  { year: 1873, white: "Study", black: "Analysis", name: "Add Knight activity evaluation" },
 ]
