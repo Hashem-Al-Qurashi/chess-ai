@@ -689,4 +689,5 @@ export const famousGames: FamousGame[] = [
   { year: 1914, white: "Study", black: "Analysis", name: "Refine Pirc defense strategy" },
   { year: 1856, white: "Study", black: "Analysis", name: "Update King movement logic notes" },
   { year: 2012, white: "Study", black: "Analysis", name: "Document deflection tactical pattern" },
+  { year: 1908, white: "Study", black: "Analysis", name: "Update Rook movement logic notes" },
 ]
