@@ -123,4 +123,5 @@ export const endgamePositions: Endgame[] = [
   { name: "Triangulation", fen: "8/8/4k3/8/4K3/4P3/8/8 w - - 0 1" },
   { name: "Stalemate Trap", fen: "k7/2Q5/1K6/8/8/8/8/8 w - - 0 1" },
   { name: "Fortress Draw", fen: "8/8/8/1k6/8/1K6/1B6/8 w - - 0 1" },
+  { name: "Wrong Bishop Pawn", fen: "8/8/8/7k/8/8/7P/5K1B w - - 0 1" },
 ]
