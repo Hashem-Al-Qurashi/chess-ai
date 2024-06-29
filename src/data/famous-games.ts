@@ -701,4 +701,5 @@ export const famousGames: FamousGame[] = [
   { year: 1936, white: "Study", black: "Analysis", name: "Expand Grunfeld repertoire data" },
   { year: 1921, white: "Study", black: "Analysis", name: "Analyze Knight coordination principle" },
   { year: 1856, white: "Study", black: "Analysis", name: "Analyze Queen coordination principle" },
+  { year: 1955, white: "Study", black: "Analysis", name: "Record deflection combination motif" },
 ]
