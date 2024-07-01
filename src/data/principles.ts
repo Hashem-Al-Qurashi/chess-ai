@@ -694,4 +694,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Add fork puzzle example" },
   { category: "Opening", tip: "Add Benoni opening variation analysis" },
   { category: "Strategy", tip: "Improve King endgame technique" },
+  { category: "Opening", tip: "Add Catalan opening variation analysis" },
 ]
