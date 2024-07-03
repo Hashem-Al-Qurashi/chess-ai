@@ -704,4 +704,5 @@ export const famousGames: FamousGame[] = [
   { year: 1955, white: "Study", black: "Analysis", name: "Record deflection combination motif" },
   { year: 1876, white: "Study", black: "Analysis", name: "Improve Rook endgame technique" },
   { year: 1997, white: "Study", black: "Analysis", name: "Add overloading puzzle example" },
+  { year: 1861, white: "Study", black: "Analysis", name: "Update Queen movement logic notes" },
 ]
