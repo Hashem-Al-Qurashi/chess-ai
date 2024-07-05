@@ -701,4 +701,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Refine Benoni defense strategy" },
   { category: "Endgame", tip: "Add King's Gambit opening variation analysis" },
   { category: "Strategy", tip: "Update King movement logic notes" },
+  { category: "Opening", tip: "Analyze Queen coordination principle" },
 ]
