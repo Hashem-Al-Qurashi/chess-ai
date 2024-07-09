@@ -715,4 +715,5 @@ export const famousGames: FamousGame[] = [
   { year: 1907, white: "Study", black: "Analysis", name: "Analyze King coordination principle" },
   { year: 2014, white: "Study", black: "Analysis", name: "Expand Caro-Kann repertoire data" },
   { year: 1871, white: "Study", black: "Analysis", name: "Add fork puzzle example" },
+  { year: 1929, white: "Study", black: "Analysis", name: "Note pin recognition pattern" },
 ]
