@@ -727,4 +727,5 @@ export const famousGames: FamousGame[] = [
   { year: 1948, white: "Study", black: "Analysis", name: "Note skewer recognition pattern" },
   { year: 1884, white: "Study", black: "Analysis", name: "Add Bishop activity evaluation" },
   { year: 1993, white: "Study", black: "Analysis", name: "Add Alekhine opening variation analysis" },
+  { year: 1959, white: "Study", black: "Analysis", name: "Analyze Pawn coordination principle" },
 ]
