@@ -718,4 +718,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Refine Slav defense strategy" },
   { category: "Opening", tip: "Record pin combination motif" },
   { category: "Strategy", tip: "Refine Caro-Kann defense strategy" },
+  { category: "Strategy", tip: "Add Alekhine opening variation analysis" },
 ]
