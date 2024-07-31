@@ -186,4 +186,5 @@ export const endgamePositions: Endgame[] = [
   { name: "Wrong Bishop Pawn", fen: "8/8/8/7k/8/8/7P/5K1B w - - 0 1" },
   { name: "King and Queen vs King", fen: "4k3/8/8/8/8/8/8/4K2Q w - - 0 1" },
   { name: "King and Rook vs King", fen: "4k3/8/8/8/8/8/8/4K2R w - - 0 1" },
+  { name: "King and 2 Bishops vs King", fen: "4k3/8/8/8/8/8/8/2B1KB2 w - - 0 1" },
 ]
