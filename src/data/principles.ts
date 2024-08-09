@@ -184,4 +184,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Castle early for king safety" },
   { category: "Opening", tip: "Don't move the same piece twice in the opening" },
   { category: "Opening", tip: "Don't bring the queen out too early" },
+  { category: "Opening", tip: "Connect your rooks" },
 ]
