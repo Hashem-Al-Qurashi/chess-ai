@@ -190,4 +190,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Place rooks on open files" },
   { category: "Middlegame", tip: "Knights are better in closed positions" },
   { category: "Middlegame", tip: "Bishops are better in open positions" },
+  { category: "Middlegame", tip: "Avoid pawn islands" },
 ]
