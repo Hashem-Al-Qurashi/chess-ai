@@ -207,4 +207,5 @@ export const endgamePositions: Endgame[] = [
   { name: "Philidor Position", fen: "4k3/8/4K3/4P3/8/8/8/r7 b - - 0 1" },
   { name: "Queen vs Rook", fen: "4k3/8/8/8/8/8/8/Q3K2r w - - 0 1" },
   { name: "Rook and Pawn vs Rook", fen: "4k3/8/4K3/4P3/8/8/r7/4R3 w - - 0 1" },
+  { name: "Two Rooks vs King", fen: "4k3/8/8/8/8/8/8/R3K2R w - - 0 1" },
 ]
