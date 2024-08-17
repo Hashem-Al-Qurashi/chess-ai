@@ -197,4 +197,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Restrict the opponent's pieces" },
   { category: "Middlegame", tip: "Look for tactical motifs: pins, forks, skewers" },
   { category: "Middlegame", tip: "Control key diagonals with bishops" },
+  { category: "Endgame", tip: "King becomes an active piece in the endgame" },
 ]
