@@ -200,4 +200,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "King becomes an active piece in the endgame" },
   { category: "Endgame", tip: "Push passed pawns in the endgame" },
   { category: "Endgame", tip: "Rook belongs behind passed pawns" },
+  { category: "Endgame", tip: "Opposition is key in king and pawn endings" },
 ]
