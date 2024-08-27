@@ -226,4 +226,5 @@ export const famousGames: FamousGame[] = [
   { year: 1852, white: "Anderssen", black: "Dufresne", name: "The Evergreen Game" },
   { year: 1858, white: "Morphy", black: "Duke of Brunswick", name: "The Opera Game" },
   { year: 1895, white: "Steinitz", black: "Von Bardeleben", name: "Steinitz Immortal" },
+  { year: 1912, white: "Levitsky", black: "Marshall", name: "The Gold Coins Game" },
 ]
