@@ -292,4 +292,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Connect your rooks" },
   { category: "Opening", tip: "Fight for the center even with flank openings" },
   { category: "Middlegame", tip: "Create and exploit weak squares" },
+  { category: "Middlegame", tip: "Place rooks on open files" },
 ]
