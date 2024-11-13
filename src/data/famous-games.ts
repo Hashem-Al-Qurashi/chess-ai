@@ -338,4 +338,5 @@ export const famousGames: FamousGame[] = [
   { year: 1918, white: "Rotlewi", black: "Rubinstein", name: "Rubinstein's Immortal" },
   { year: 1925, white: "Torre", black: "Lasker", name: "Torre's Immortal" },
   { year: 1935, white: "Alekhine", black: "Bogoljubow", name: "Alekhine's Brilliance" },
+  { year: 1956, white: "Byrne", black: "Fischer", name: "The Game of the Century" },
 ]
