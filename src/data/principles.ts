@@ -347,4 +347,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Triangulation to gain tempo" },
   { category: "Strategy", tip: "Create a plan and follow it" },
   { category: "Strategy", tip: "Prophylaxis: prevent opponent's ideas" },
+  { category: "Strategy", tip: "Improve your worst-placed piece" },
 ]
