@@ -405,4 +405,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Trade pieces when ahead in material" },
   { category: "Middlegame", tip: "Create passed pawns" },
   { category: "Middlegame", tip: "Restrict the opponent's pieces" },
+  { category: "Middlegame", tip: "Look for tactical motifs: pins, forks, skewers" },
 ]
