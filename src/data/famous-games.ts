@@ -399,4 +399,5 @@ export const famousGames: FamousGame[] = [
   { year: 1985, white: "Kasparov", black: "Karpov", name: "Kasparov's 24th" },
   { year: 1991, white: "Kasparov", black: "Anand", name: "Kasparov's Scotch" },
   { year: 1999, white: "Kasparov", black: "Topalov", name: "Kasparov's Immortal" },
+  { year: 2013, white: "Carlsen", black: "Anand", name: "Carlsen's WC Win" },
 ]
