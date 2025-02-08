@@ -500,4 +500,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Expand Alekhine repertoire data" },
   { category: "Opening", tip: "Note fork recognition pattern" },
   { category: "Strategy", tip: "Study King's Indian middlegame plans" },
+  { category: "Strategy", tip: "Note decoy recognition pattern" },
 ]
