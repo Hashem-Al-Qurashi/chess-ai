@@ -730,4 +730,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Note pin recognition pattern" },
   { category: "Endgame", tip: "Refine Grunfeld defense strategy" },
   { category: "Opening", tip: "Record pin combination motif" },
+  { category: "Strategy", tip: "Record fork combination motif" },
 ]
