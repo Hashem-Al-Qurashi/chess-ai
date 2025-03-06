@@ -735,4 +735,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Add Knight activity evaluation" },
   { category: "Endgame", tip: "Study Pirc middlegame plans" },
   { category: "Strategy", tip: "Record fork combination motif" },
+  { category: "Endgame", tip: "Note windmill recognition pattern" },
 ]
