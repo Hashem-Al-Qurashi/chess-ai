@@ -21,4 +21,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "A26", name: "English Opening: Botvinnik System", moves: "1.c4 e5 2.Nc3 Nc6 3.g3 g6 4.Bg2 Bg7 5.d3 d6 6.e4" },
   { eco: "A70", name: "Benoni: Classical Main Line", moves: "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.Nf3" },
   { eco: "E04", name: "Catalan: Open Variation", moves: "1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.Nf3" },
+  { eco: "A34", name: "English Opening: Symmetrical, Three Knights", moves: "1.c4 c5 2.Nc3 Nf6" },
 ]
