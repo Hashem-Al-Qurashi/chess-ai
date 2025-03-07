@@ -23,4 +23,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "E04", name: "Catalan: Open Variation", moves: "1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.Nf3" },
   { eco: "A34", name: "English Opening: Symmetrical, Three Knights", moves: "1.c4 c5 2.Nc3 Nf6" },
   { eco: "E81", name: "King's Indian: Sämisch, Byrne Defense", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f3 O-O 6.Be3 c5" },
+  { eco: "C50", name: "Italian Game", moves: "1.e4 e5 2.Nf3 Nc6 3.Bc4" },
 ]
