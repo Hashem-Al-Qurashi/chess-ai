@@ -754,4 +754,5 @@ export const famousGames: FamousGame[] = [
   { year: 1889, white: "Study", black: "Analysis", name: "Add interference puzzle example" },
   { year: 1971, white: "Study", black: "Analysis", name: "Improve Queen endgame technique" },
   { year: 1958, white: "Study", black: "Analysis", name: "Study Benoni middlegame plans" },
+  { year: 1913, white: "Study", black: "Analysis", name: "Refine Dutch defense strategy" },
 ]
