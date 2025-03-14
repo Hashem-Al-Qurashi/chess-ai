@@ -14,4 +14,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "David Bronstein", text: "The most powerful weapon in chess is to have the next move." },
   { author: "Yasser Seirawan", text: "Chess is 99 percent tactics." },
   { author: "Garry Kasparov", text: "Chess is mental torture." },
+  { author: "Vladimir Kramnik", text: "Chess is an incredibly emotional game." },
 ]
