@@ -20,4 +20,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Tempo", description: "Gaining or losing a move in development or initiative" },
   { name: "Windmill", description: "A repeating pattern of discovered checks that wins material" },
   { name: "Semi-Open File", description: "A file with only enemy pawns, useful for attacking those pawns with rooks" },
+  { name: "Weak Color Complex", description: "Exploiting squares of one color when the opponent's same-colored bishop is absent" },
 ]
