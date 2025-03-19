@@ -766,4 +766,5 @@ export const famousGames: FamousGame[] = [
   { year: 1991, white: "Study", black: "Analysis", name: "Update Pawn movement logic notes" },
   { year: 1883, white: "Study", black: "Analysis", name: "Add deflection puzzle example" },
   { year: 1866, white: "Study", black: "Analysis", name: "Expand Benoni repertoire data" },
+  { year: 2024, white: "Study", black: "Analysis", name: "Add Nimzo-Indian opening variation analysis" },
 ]
