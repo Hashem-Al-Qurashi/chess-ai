@@ -749,4 +749,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Note windmill recognition pattern" },
   { category: "Strategy", tip: "Add Rook activity evaluation" },
   { category: "Middlegame", tip: "Expand Ruy Lopez repertoire data" },
+  { category: "Strategy", tip: "Record x-ray combination motif" },
 ]
