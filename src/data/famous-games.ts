@@ -768,4 +768,5 @@ export const famousGames: FamousGame[] = [
   { year: 1866, white: "Study", black: "Analysis", name: "Expand Benoni repertoire data" },
   { year: 2024, white: "Study", black: "Analysis", name: "Add Nimzo-Indian opening variation analysis" },
   { year: 1927, white: "Study", black: "Analysis", name: "Add pin puzzle example" },
+  { year: 1911, white: "Study", black: "Analysis", name: "Refine Pirc defense strategy" },
 ]
