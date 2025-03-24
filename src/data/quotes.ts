@@ -22,4 +22,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Reuben Fine", text: "A combination is a forced series of moves with sacrifice leading to advantage." },
   { author: "Hikaru Nakamura", text: "Chess is not always about winning. Sometimes it's about learning." },
   { author: "Wilhelm Steinitz", text: "The king is a fighting piece. Use it!" },
+  { author: "Fabiano Caruana", text: "The hardest game to win is a won game." },
 ]
