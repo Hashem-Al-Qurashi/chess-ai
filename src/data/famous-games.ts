@@ -782,4 +782,5 @@ export const famousGames: FamousGame[] = [
   { year: 1963, white: "Study", black: "Analysis", name: "Analyze Rook coordination principle" },
   { year: 2020, white: "Study", black: "Analysis", name: "Add Scotch opening variation analysis" },
   { year: 2021, white: "Study", black: "Analysis", name: "Improve Knight endgame technique" },
+  { year: 1958, white: "Study", black: "Analysis", name: "Update Queen movement logic notes" },
 ]
