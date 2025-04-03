@@ -772,4 +772,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Study Slav middlegame plans" },
   { category: "Middlegame", tip: "Add discovered attack puzzle example" },
   { category: "Strategy", tip: "Document overloading tactical pattern" },
+  { category: "Strategy", tip: "Improve Queen endgame technique" },
 ]
