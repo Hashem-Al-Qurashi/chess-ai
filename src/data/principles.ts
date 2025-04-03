@@ -770,4 +770,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Expand Benoni repertoire data" },
   { category: "Middlegame", tip: "Study Nimzo-Indian middlegame plans" },
   { category: "Strategy", tip: "Study Slav middlegame plans" },
+  { category: "Middlegame", tip: "Add discovered attack puzzle example" },
 ]
