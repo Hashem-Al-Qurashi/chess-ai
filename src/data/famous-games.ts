@@ -799,4 +799,5 @@ export const famousGames: FamousGame[] = [
   { year: 2014, white: "Study", black: "Analysis", name: "Expand Dutch repertoire data" },
   { year: 1946, white: "Study", black: "Analysis", name: "Update Pawn movement logic notes" },
   { year: 1937, white: "Study", black: "Analysis", name: "Update Knight movement logic notes" },
+  { year: 1994, white: "Study", black: "Analysis", name: "Add King's Gambit opening variation analysis" },
 ]
