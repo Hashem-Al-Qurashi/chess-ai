@@ -803,4 +803,5 @@ export const famousGames: FamousGame[] = [
   { year: 2022, white: "Study", black: "Analysis", name: "Expand King's Gambit repertoire data" },
   { year: 1928, white: "Study", black: "Analysis", name: "Refine Reti defense strategy" },
   { year: 2007, white: "Study", black: "Analysis", name: "Document pin tactical pattern" },
+  { year: 2007, white: "Study", black: "Analysis", name: "Analyze King coordination principle" },
 ]
