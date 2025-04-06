@@ -36,4 +36,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Minority Attack", description: "Advancing pawns on the side where you have fewer pawns to weaken the opponent's structure" },
   { name: "Piece Coordination", description: "Arranging pieces to work together harmoniously toward a common goal" },
   { name: "X-Ray Attack", description: "A piece exerts influence through another piece on the same line" },
+  { name: "Center Control", description: "Occupying or controlling the central squares e4, d4, e5, d5" },
 ]
