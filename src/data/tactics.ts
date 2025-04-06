@@ -37,4 +37,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Piece Coordination", description: "Arranging pieces to work together harmoniously toward a common goal" },
   { name: "X-Ray Attack", description: "A piece exerts influence through another piece on the same line" },
   { name: "Center Control", description: "Occupying or controlling the central squares e4, d4, e5, d5" },
+  { name: "Sealed Diagonal", description: "A long diagonal controlled by a bishop, often decisive in attack" },
 ]
