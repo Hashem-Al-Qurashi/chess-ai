@@ -98,4 +98,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "B53", name: "Sicilian: Chekhover Variation", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4" },
   { eco: "A41", name: "Queen's Pawn: Robatsch Defense", moves: "1.d4 d6" },
   { eco: "D70", name: "Neo-Grünfeld Defense", moves: "1.d4 Nf6 2.c4 g6 3.f3 d5" },
+  { eco: "E93", name: "King's Indian: Petrosian System", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 O-O 6.Be2 e5 7.d5 Nbd7" },
 ]
