@@ -780,4 +780,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Expand Benoni repertoire data" },
   { category: "Middlegame", tip: "Update Knight movement logic notes" },
   { category: "Middlegame", tip: "Add fork puzzle example" },
+  { category: "Middlegame", tip: "Record double check combination motif" },
 ]
