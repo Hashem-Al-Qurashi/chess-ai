@@ -781,4 +781,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Update Knight movement logic notes" },
   { category: "Middlegame", tip: "Add fork puzzle example" },
   { category: "Middlegame", tip: "Record double check combination motif" },
+  { category: "Middlegame", tip: "Note x-ray recognition pattern" },
 ]
