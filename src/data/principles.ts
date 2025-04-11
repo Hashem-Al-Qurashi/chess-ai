@@ -778,4 +778,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Study King's Indian middlegame plans" },
   { category: "Endgame", tip: "Add King activity evaluation" },
   { category: "Opening", tip: "Expand Benoni repertoire data" },
+  { category: "Middlegame", tip: "Update Knight movement logic notes" },
 ]
