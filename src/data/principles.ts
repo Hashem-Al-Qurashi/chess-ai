@@ -785,4 +785,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Update Queen movement logic notes" },
   { category: "Endgame", tip: "Study Queen's Gambit middlegame plans" },
   { category: "Endgame", tip: "Note skewer recognition pattern" },
+  { category: "Strategy", tip: "Add skewer puzzle example" },
 ]
