@@ -130,4 +130,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "B98", name: "Sicilian: Najdorf, Classical", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bg5 e6 7.f4 Be7" },
   { eco: "B07", name: "Pirc Defense", moves: "1.e4 d6 2.d4 Nf6 3.Nc3" },
   { eco: "B96", name: "Sicilian: Najdorf, Polugaevsky Variation", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bg5 e6 7.f4" },
+  { eco: "E24", name: "Nimzo-Indian: Sämisch Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.a3 Bxc3+ 5.bxc3" },
 ]
