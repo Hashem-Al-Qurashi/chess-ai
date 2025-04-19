@@ -825,4 +825,5 @@ export const famousGames: FamousGame[] = [
   { year: 1887, white: "Study", black: "Analysis", name: "Update Bishop movement logic notes" },
   { year: 1962, white: "Study", black: "Analysis", name: "Improve King endgame technique" },
   { year: 2003, white: "Study", black: "Analysis", name: "Document discovered attack tactical pattern" },
+  { year: 1870, white: "Study", black: "Analysis", name: "Analyze Bishop coordination principle" },
 ]
