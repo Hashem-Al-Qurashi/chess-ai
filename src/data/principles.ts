@@ -798,4 +798,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Document overloading tactical pattern" },
   { category: "Middlegame", tip: "Document windmill tactical pattern" },
   { category: "Strategy", tip: "Add deflection puzzle example" },
+  { category: "Opening", tip: "Expand Grunfeld repertoire data" },
 ]
