@@ -54,4 +54,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Open File", description: "A file with no pawns, ideal for rook placement and penetration" },
   { name: "Discovered Attack", description: "Moving one piece reveals an attack by another piece" },
   { name: "Connected Rooks", description: "Two rooks on the same rank or file supporting each other" },
+  { name: "Interference", description: "Placing a piece between two enemy pieces that are coordinating" },
 ]
