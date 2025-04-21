@@ -800,4 +800,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Add deflection puzzle example" },
   { category: "Opening", tip: "Expand Grunfeld repertoire data" },
   { category: "Endgame", tip: "Record windmill combination motif" },
+  { category: "Strategy", tip: "Improve Bishop endgame technique" },
 ]
