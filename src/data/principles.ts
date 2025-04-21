@@ -799,4 +799,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Document windmill tactical pattern" },
   { category: "Strategy", tip: "Add deflection puzzle example" },
   { category: "Opening", tip: "Expand Grunfeld repertoire data" },
+  { category: "Endgame", tip: "Record windmill combination motif" },
 ]
