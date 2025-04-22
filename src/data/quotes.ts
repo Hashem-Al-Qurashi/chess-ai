@@ -42,4 +42,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Savielly Tartakower", text: "The winner of the game is the player who makes the next-to-last mistake." },
   { author: "Levon Aronian", text: "Chess is a beautiful mistress to which we keep coming back." },
   { author: "Max Euwe", text: "Strategy requires thought, tactics require observation." },
+  { author: "Akiba Rubinstein", text: "Who is your opponent tonight? Tonight I am playing against the black pieces." },
 ]
