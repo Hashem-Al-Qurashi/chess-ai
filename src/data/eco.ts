@@ -157,4 +157,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "E44", name: "Nimzo-Indian: Fischer, Main Line", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Ne2" },
   { eco: "C01", name: "French Defense: Exchange Variation", moves: "1.e4 e6 2.d4 d5 3.exd5 exd5" },
   { eco: "E45", name: "Nimzo-Indian: Rubinstein, Bronstein Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Ne2 Ba6" },
+  { eco: "C68", name: "Ruy Lopez: Exchange Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6" },
 ]
