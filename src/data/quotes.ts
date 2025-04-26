@@ -45,4 +45,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Akiba Rubinstein", text: "Who is your opponent tonight? Tonight I am playing against the black pieces." },
   { author: "Teimour Radjabov", text: "Good positions don't win games, good moves do." },
   { author: "Viswanathan Anand", text: "I have the feeling that when I play well, I can beat anyone." },
+  { author: "Ian Nepomniachtchi", text: "Fast play leads to fast mistakes." },
 ]
