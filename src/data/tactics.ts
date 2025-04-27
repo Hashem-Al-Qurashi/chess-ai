@@ -60,4 +60,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Isolated Pawn", description: "A pawn with no friendly pawns on adjacent files for support" },
   { name: "Prophylaxis", description: "A preventive move that stops the opponent's plan before it begins" },
   { name: "Double Check", description: "Two pieces give check simultaneously, forcing the king to move" },
+  { name: "Battery", description: "Two or more pieces aligned on a rank, file, or diagonal to increase attacking power" },
 ]
