@@ -59,4 +59,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Deflection", description: "Forcing a defensive piece away from its protective duty" },
   { name: "Isolated Pawn", description: "A pawn with no friendly pawns on adjacent files for support" },
   { name: "Prophylaxis", description: "A preventive move that stops the opponent's plan before it begins" },
+  { name: "Double Check", description: "Two pieces give check simultaneously, forcing the king to move" },
 ]
