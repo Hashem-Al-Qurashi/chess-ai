@@ -63,4 +63,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Battery", description: "Two or more pieces aligned on a rank, file, or diagonal to increase attacking power" },
   { name: "Castling Queenside", description: "Castling long to connect rooks and launch a kingside pawn attack" },
   { name: "Protected Passed Pawn", description: "A passed pawn defended by another pawn, very strong in endgames" },
+  { name: "Hanging Pawns", description: "A pair of adjacent pawns on the fourth rank with no pawn support on either side" },
 ]
