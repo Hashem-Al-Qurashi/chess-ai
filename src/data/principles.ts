@@ -813,4 +813,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Expand Queen's Gambit repertoire data" },
   { category: "Opening", tip: "Record overloading combination motif" },
   { category: "Strategy", tip: "Study Catalan middlegame plans" },
+  { category: "Endgame", tip: "Update Bishop movement logic notes" },
 ]
