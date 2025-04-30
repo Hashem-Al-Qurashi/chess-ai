@@ -46,4 +46,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Teimour Radjabov", text: "Good positions don't win games, good moves do." },
   { author: "Viswanathan Anand", text: "I have the feeling that when I play well, I can beat anyone." },
   { author: "Ian Nepomniachtchi", text: "Fast play leads to fast mistakes." },
+  { author: "Anatoly Karpov", text: "Chess is everything: art, science, and sport." },
 ]
