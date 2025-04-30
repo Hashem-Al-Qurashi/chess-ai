@@ -845,4 +845,5 @@ export const famousGames: FamousGame[] = [
   { year: 1981, white: "Study", black: "Analysis", name: "Refine Pirc defense strategy" },
   { year: 1854, white: "Study", black: "Analysis", name: "Add Queen activity evaluation" },
   { year: 1998, white: "Study", black: "Analysis", name: "Add Grunfeld opening variation analysis" },
+  { year: 2021, white: "Study", black: "Analysis", name: "Add interference puzzle example" },
 ]
