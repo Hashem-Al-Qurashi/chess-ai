@@ -65,4 +65,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Protected Passed Pawn", description: "A passed pawn defended by another pawn, very strong in endgames" },
   { name: "Hanging Pawns", description: "A pair of adjacent pawns on the fourth rank with no pawn support on either side" },
   { name: "Zugzwang", description: "A position where any move worsens the position of the player to move" },
+  { name: "Bishop Pair Advantage", description: "Using two bishops' long-range diagonal control in open positions" },
 ]
