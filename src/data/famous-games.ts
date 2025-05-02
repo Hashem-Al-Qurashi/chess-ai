@@ -847,4 +847,5 @@ export const famousGames: FamousGame[] = [
   { year: 1998, white: "Study", black: "Analysis", name: "Add Grunfeld opening variation analysis" },
   { year: 2021, white: "Study", black: "Analysis", name: "Add interference puzzle example" },
   { year: 2007, white: "Study", black: "Analysis", name: "Refine Scotch defense strategy" },
+  { year: 2021, white: "Study", black: "Analysis", name: "Improve Queen endgame technique" },
 ]
