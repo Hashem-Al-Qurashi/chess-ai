@@ -175,4 +175,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "E72", name: "King's Indian: Normal Variation", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.g3" },
   { eco: "D83", name: "Grünfeld: Brinckmann, Grünfeld Gambit", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Bf4 Bg7 5.e3 O-O" },
   { eco: "A08", name: "King's Indian Attack: French Variation", moves: "1.Nf3 d5 2.g3 c5 3.Bg2" },
+  { eco: "A65", name: "Benoni: Taimanov Variation", moves: "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.f4" },
 ]
