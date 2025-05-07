@@ -188,4 +188,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "A54", name: "Old Indian: Ukrainian Variation", moves: "1.d4 Nf6 2.c4 d6 3.Nc3 e5 4.Nf3 Nbd7 5.e4" },
   { eco: "D85", name: "Grünfeld: Exchange Variation", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5" },
   { eco: "B56", name: "Sicilian: Open Variation", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3" },
+  { eco: "D04", name: "Colle System", moves: "1.d4 d5 2.Nf3 Nf6 3.e3" },
 ]
