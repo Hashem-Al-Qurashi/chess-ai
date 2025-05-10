@@ -74,4 +74,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Blockade", description: "Placing a piece in front of an enemy pawn to prevent its advance" },
   { name: "Pin", description: "An attacked piece cannot move without exposing a more valuable piece behind it" },
   { name: "Stalemate Trap", description: "Setting up a position where the opponent has no legal moves but is not in check" },
+  { name: "Fianchetto", description: "Developing a bishop to the long diagonal via b2/g2 or b7/g7" },
 ]
