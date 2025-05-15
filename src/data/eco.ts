@@ -201,4 +201,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "B34", name: "Sicilian: Accelerated Dragon", moves: "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 g6" },
   { eco: "B54", name: "Sicilian: Open, Najdorf", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4" },
   { eco: "E00", name: "Catalan Opening", moves: "1.d4 Nf6 2.c4 e6 3.g3" },
+  { eco: "E05", name: "Catalan: Open, Classical", moves: "1.d4 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.Nf3 Be7" },
 ]
