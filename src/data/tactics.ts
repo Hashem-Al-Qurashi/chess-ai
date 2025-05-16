@@ -79,4 +79,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Undermining", description: "Removing the defender of a key piece or square" },
   { name: "Backward Pawn", description: "A pawn that cannot be supported by adjacent pawns and is on a semi-open file" },
   { name: "Tempo", description: "Gaining or losing a move in development or initiative" },
+  { name: "Windmill", description: "A repeating pattern of discovered checks that wins material" },
 ]
