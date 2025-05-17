@@ -55,4 +55,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Peter Svidler", text: "Every chess master was once a beginner." },
   { author: "José Raúl Capablanca", text: "You may learn much more from a game you lose than from a game you win." },
   { author: "Mikhail Botvinnik", text: "Chess is the art which expresses the science of logic." },
+  { author: "Emanuel Lasker", text: "When you see a good move, look for a better one." },
 ]
