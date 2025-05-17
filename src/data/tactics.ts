@@ -82,4 +82,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Windmill", description: "A repeating pattern of discovered checks that wins material" },
   { name: "Semi-Open File", description: "A file with only enemy pawns, useful for attacking those pawns with rooks" },
   { name: "Weak Color Complex", description: "Exploiting squares of one color when the opponent's same-colored bishop is absent" },
+  { name: "King Safety", description: "Ensuring the king is protected, usually through castling and pawn cover" },
 ]
