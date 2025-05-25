@@ -61,4 +61,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Aron Nimzowitsch", text: "The threat is stronger than the execution." },
   { author: "Wesley So", text: "Patience is the most valuable trait in chess." },
   { author: "Frank Marshall", text: "My style of play is somewhere between that of Tal and Petrosian." },
+  { author: "David Bronstein", text: "The most powerful weapon in chess is to have the next move." },
 ]
