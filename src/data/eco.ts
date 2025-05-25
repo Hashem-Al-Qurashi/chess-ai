@@ -232,4 +232,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "D76", name: "Neo-Grünfeld: Simagin Variation", moves: "1.d4 Nf6 2.c4 g6 3.g3 d5 4.Bg2 Bg7 5.cxd5 Nxd5 6.Nf3 Nb6 7.Nc3 Nc6 8.e3 O-O 9.O-O Re8" },
   { eco: "D56", name: "Queen's Gambit Declined: Lasker Defense", moves: "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 h6 7.Bh4 Ne4" },
   { eco: "D27", name: "Queen's Gambit Accepted: Classical, Main Line", moves: "1.d4 d5 2.c4 dxc4 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5 6.O-O a6" },
+  { eco: "C71", name: "Ruy Lopez: Modern Steinitz Defense", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6" },
 ]
