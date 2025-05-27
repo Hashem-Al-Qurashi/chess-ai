@@ -237,4 +237,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "D07", name: "Chigorin Defense", moves: "1.d4 d5 2.c4 Nc6" },
   { eco: "C53", name: "Italian Game: Classical Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5" },
   { eco: "E61", name: "King's Indian: Fianchetto Variation", moves: "1.d4 Nf6 2.c4 g6 3.Nc3" },
+  { eco: "C69", name: "Ruy Lopez: Exchange, Gligoric Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6" },
 ]
