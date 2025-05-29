@@ -249,4 +249,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "E54", name: "Nimzo-Indian: Main, Gligoric System", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 O-O 5.Nf3 d5 6.Bd3 c5 7.O-O dxc4 8.Bxc4" },
   { eco: "E33", name: "Nimzo-Indian: Classical, Zurich Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qc2 Nc6" },
   { eco: "E20", name: "Nimzo-Indian Defense", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4" },
+  { eco: "A03", name: "Bird's Opening: Dutch Variation", moves: "1.f4 d5" },
 ]
