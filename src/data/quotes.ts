@@ -69,4 +69,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Boris Spassky", text: "The best move is the one that improves the worst-placed piece." },
   { author: "Ding Liren", text: "Every move creates a new position, and every position demands a new evaluation." },
   { author: "Vassily Smyslov", text: "In chess, as in life, a man is his own most dangerous opponent." },
+  { author: "Reuben Fine", text: "A combination is a forced series of moves with sacrifice leading to advantage." },
 ]
