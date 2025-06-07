@@ -277,4 +277,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "C13", name: "French Defense: Classical, Richter Attack", moves: "1.e4 e6 2.d4 d5 3.Nc3 Nf6 4.Bg5 Be7" },
   { eco: "D08", name: "Queen's Gambit: Albin Countergambit", moves: "1.d4 d5 2.c4 e5" },
   { eco: "E22", name: "Nimzo-Indian: Spielmann Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qb3" },
+  { eco: "A47", name: "Queen's Indian: Marienbad System", moves: "1.d4 Nf6 2.Nf3 b6" },
 ]
