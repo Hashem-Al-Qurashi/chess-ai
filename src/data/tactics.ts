@@ -101,4 +101,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Sealed Diagonal", description: "A long diagonal controlled by a bishop, often decisive in attack" },
   { name: "Knight Outpost", description: "Placing a knight on a protected square deep in enemy territory" },
   { name: "Pawn Storm", description: "Advancing a line of pawns toward the enemy king to open lines for attack" },
+  { name: "Perpetual Check", description: "Forcing a draw by giving check repeatedly when the opponent cannot escape" },
 ]
