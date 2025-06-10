@@ -106,4 +106,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Rook Lift", description: "Moving a rook to the third or fourth rank to participate in a kingside attack" },
   { name: "Smothered Mate", description: "Checkmate by a knight when the king is surrounded by its own pieces" },
   { name: "Pawn Majority", description: "Having more pawns on one side of the board to create a passed pawn" },
+  { name: "Fortress", description: "A defensive formation that cannot be breached despite material disadvantage" },
 ]
