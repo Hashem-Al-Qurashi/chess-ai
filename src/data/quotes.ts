@@ -77,4 +77,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Judit Polgar", text: "I always play to win." },
   { author: "Tigran Petrosian", text: "Some sacrifices are sound; the rest are mine." },
   { author: "Samuel Reshevsky", text: "Good players develop a sense of danger." },
+  { author: "Siegbert Tarrasch", text: "Chess, like love, like music, has the power to make men happy." },
 ]
