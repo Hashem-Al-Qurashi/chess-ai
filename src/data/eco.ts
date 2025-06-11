@@ -287,4 +287,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "A18", name: "English Opening: Mikenas-Carls Variation", moves: "1.c4 Nf6 2.Nc3 e6 3.e4" },
   { eco: "D01", name: "Richter-Veresov Attack", moves: "1.d4 d5 2.Nc3 Nf6 3.Bg5" },
   { eco: "D98", name: "Grünfeld: Russian, Smyslov Variation", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4 Bg4" },
+  { eco: "D97", name: "Grünfeld: Russian System", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3" },
 ]
