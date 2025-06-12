@@ -112,4 +112,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Zwischenschach", description: "An intermediate check played before completing a combination" },
   { name: "Skewer", description: "A high-value piece is attacked, and when it moves, a piece behind it is captured" },
   { name: "Fork", description: "A piece attacks two or more enemy pieces simultaneously" },
+  { name: "Open File", description: "A file with no pawns, ideal for rook placement and penetration" },
 ]
