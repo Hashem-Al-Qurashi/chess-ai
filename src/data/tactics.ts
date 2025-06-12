@@ -111,4 +111,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Pawn Chain", description: "A diagonal line of pawns, strong when pointing toward the enemy king" },
   { name: "Zwischenschach", description: "An intermediate check played before completing a combination" },
   { name: "Skewer", description: "A high-value piece is attacked, and when it moves, a piece behind it is captured" },
+  { name: "Fork", description: "A piece attacks two or more enemy pieces simultaneously" },
 ]
