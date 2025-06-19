@@ -323,4 +323,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "B90", name: "Sicilian: Najdorf Variation", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6" },
   { eco: "A09", name: "Reti Opening: Advance Variation", moves: "1.Nf3 d5 2.c4" },
   { eco: "B16", name: "Caro-Kann: Bronstein-Larsen Variation", moves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ gxf6" },
+  { eco: "E23", name: "Nimzo-Indian: Spielmann, Mattison Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qb3 c5 5.dxc5 Nc6" },
 ]
