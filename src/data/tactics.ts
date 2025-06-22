@@ -122,4 +122,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Prophylaxis", description: "A preventive move that stops the opponent's plan before it begins" },
   { name: "Double Check", description: "Two pieces give check simultaneously, forcing the king to move" },
   { name: "Battery", description: "Two or more pieces aligned on a rank, file, or diagonal to increase attacking power" },
+  { name: "Castling Queenside", description: "Castling long to connect rooks and launch a kingside pawn attack" },
 ]
