@@ -83,4 +83,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Veselin Topalov", text: "In chess, knowledge is a very transient thing." },
   { author: "Paul Morphy", text: "Help your pieces so they can help you." },
   { author: "Richard Réti", text: "A knowledge of combinative play is the foundation of chess." },
+  { author: "Mikhail Tal", text: "You must take your opponent into a deep dark forest where 2+2=5." },
 ]
