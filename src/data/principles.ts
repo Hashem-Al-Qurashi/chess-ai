@@ -510,4 +510,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Add Reti opening variation analysis" },
   { category: "Strategy", tip: "Study King's Indian middlegame plans" },
   { category: "Opening", tip: "Add Catalan opening variation analysis" },
+  { category: "Endgame", tip: "Expand Catalan repertoire data" },
 ]
