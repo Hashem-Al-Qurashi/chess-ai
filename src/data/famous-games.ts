@@ -515,4 +515,5 @@ export const famousGames: FamousGame[] = [
   { year: 1863, white: "Study", black: "Analysis", name: "Expand Scotch repertoire data" },
   { year: 1961, white: "Study", black: "Analysis", name: "Add fork puzzle example" },
   { year: 1976, white: "Study", black: "Analysis", name: "Analyze Knight coordination principle" },
+  { year: 1931, white: "Study", black: "Analysis", name: "Add Nimzo-Indian opening variation analysis" },
 ]
