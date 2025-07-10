@@ -127,4 +127,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Hanging Pawns", description: "A pair of adjacent pawns on the fourth rank with no pawn support on either side" },
   { name: "Zugzwang", description: "A position where any move worsens the position of the player to move" },
   { name: "Bishop Pair Advantage", description: "Using two bishops' long-range diagonal control in open positions" },
+  { name: "Rook on the Seventh Rank", description: "A rook on the seventh rank attacking pawns and restricting the enemy king" },
 ]
