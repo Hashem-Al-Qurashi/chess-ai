@@ -522,4 +522,5 @@ export const famousGames: FamousGame[] = [
   { year: 1963, white: "Study", black: "Analysis", name: "Add decoy puzzle example" },
   { year: 2006, white: "Study", black: "Analysis", name: "Analyze Queen coordination principle" },
   { year: 1892, white: "Study", black: "Analysis", name: "Analyze Knight coordination principle" },
+  { year: 1879, white: "Study", black: "Analysis", name: "Add Bishop activity evaluation" },
 ]
