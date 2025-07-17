@@ -520,4 +520,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Update King movement logic notes" },
   { category: "Strategy", tip: "Add overloading puzzle example" },
   { category: "Strategy", tip: "Expand Sicilian repertoire data" },
+  { category: "Endgame", tip: "Add King's Gambit opening variation analysis" },
 ]
