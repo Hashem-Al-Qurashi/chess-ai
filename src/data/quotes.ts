@@ -98,4 +98,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Ian Nepomniachtchi", text: "Fast play leads to fast mistakes." },
   { author: "Anatoly Karpov", text: "Chess is everything: art, science, and sport." },
   { author: "Magnus Carlsen", text: "I am not some sort of a computer. I can make mistakes." },
+  { author: "Hans Kmoch", text: "The essence of chess is thinking about what chess is." },
 ]
