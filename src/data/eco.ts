@@ -379,4 +379,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "B22", name: "Sicilian: Alapin Variation", moves: "1.e4 c5 2.c3" },
   { eco: "B87", name: "Sicilian: Najdorf, Sozin Attack", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bc4" },
   { eco: "D38", name: "Queen's Gambit Declined: Ragozin Defense", moves: "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Nf3 Bb4" },
+  { eco: "C87", name: "Ruy Lopez: Closed, Averbakh Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 d6" },
 ]
