@@ -138,4 +138,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Fianchetto", description: "Developing a bishop to the long diagonal via b2/g2 or b7/g7" },
   { name: "Decoy", description: "Luring an enemy piece to a square where it becomes vulnerable" },
   { name: "Undermining", description: "Removing the defender of a key piece or square" },
+  { name: "Backward Pawn", description: "A pawn that cannot be supported by adjacent pawns and is on a semi-open file" },
 ]
