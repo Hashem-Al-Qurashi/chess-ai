@@ -383,4 +383,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "C77", name: "Ruy Lopez: Morphy, Anderssen Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d3" },
   { eco: "C83", name: "Ruy Lopez: Open, Classical", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 d5 8.dxe5 Be6" },
   { eco: "D43", name: "Queen's Gambit Declined: Semi-Slav", moves: "1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6" },
+  { eco: "C46", name: "Three Knights Game", moves: "1.e4 e5 2.Nf3 Nc6 3.Nc3" },
 ]
