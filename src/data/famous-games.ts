@@ -528,4 +528,5 @@ export const famousGames: FamousGame[] = [
   { year: 1971, white: "Study", black: "Analysis", name: "Add x-ray puzzle example" },
   { year: 1998, white: "Study", black: "Analysis", name: "Update Bishop movement logic notes" },
   { year: 2009, white: "Study", black: "Analysis", name: "Improve Rook endgame technique" },
+  { year: 1916, white: "Study", black: "Analysis", name: "Note zugzwang recognition pattern" },
 ]
