@@ -141,4 +141,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Backward Pawn", description: "A pawn that cannot be supported by adjacent pawns and is on a semi-open file" },
   { name: "Tempo", description: "Gaining or losing a move in development or initiative" },
   { name: "Windmill", description: "A repeating pattern of discovered checks that wins material" },
+  { name: "Semi-Open File", description: "A file with only enemy pawns, useful for attacking those pawns with rooks" },
 ]
