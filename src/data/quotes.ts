@@ -102,4 +102,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Bobby Fischer", text: "Chess is life." },
   { author: "Aaron Nimzowitsch", text: "First restrain, next blockade, lastly destroy." },
   { author: "Sergey Karjakin", text: "The key to chess is not the number of pieces, but how well they work together." },
+  { author: "Peter Svidler", text: "Every chess master was once a beginner." },
 ]
