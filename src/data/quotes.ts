@@ -101,4 +101,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Hans Kmoch", text: "The essence of chess is thinking about what chess is." },
   { author: "Bobby Fischer", text: "Chess is life." },
   { author: "Aaron Nimzowitsch", text: "First restrain, next blockade, lastly destroy." },
+  { author: "Sergey Karjakin", text: "The key to chess is not the number of pieces, but how well they work together." },
 ]
