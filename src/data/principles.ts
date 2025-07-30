@@ -525,4 +525,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Add Queen's Gambit opening variation analysis" },
   { category: "Strategy", tip: "Study Pirc middlegame plans" },
   { category: "Middlegame", tip: "Add Nimzo-Indian opening variation analysis" },
+  { category: "Opening", tip: "Update Knight movement logic notes" },
 ]
