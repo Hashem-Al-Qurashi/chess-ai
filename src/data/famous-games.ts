@@ -537,4 +537,5 @@ export const famousGames: FamousGame[] = [
   { year: 1986, white: "Study", black: "Analysis", name: "Expand Slav repertoire data" },
   { year: 1914, white: "Study", black: "Analysis", name: "Study Slav middlegame plans" },
   { year: 1971, white: "Study", black: "Analysis", name: "Update King movement logic notes" },
+  { year: 1980, white: "Study", black: "Analysis", name: "Note x-ray recognition pattern" },
 ]
