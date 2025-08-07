@@ -148,4 +148,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Outpost", description: "A square in enemy territory protected by a pawn where a piece cannot be driven away" },
   { name: "Space Advantage", description: "Controlling more squares, especially in the center, limiting opponent's mobility" },
   { name: "Pawn Break", description: "Advancing a pawn to open lines and challenge the opponent's pawn structure" },
+  { name: "Good vs Bad Bishop", description: "A bishop unimpeded by its own pawns vs one blocked by pawns on same color" },
 ]
