@@ -149,4 +149,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Space Advantage", description: "Controlling more squares, especially in the center, limiting opponent's mobility" },
   { name: "Pawn Break", description: "Advancing a pawn to open lines and challenge the opponent's pawn structure" },
   { name: "Good vs Bad Bishop", description: "A bishop unimpeded by its own pawns vs one blocked by pawns on same color" },
+  { name: "Triangulation", description: "A king maneuver in 3 moves to reach the same square but transfer the move to the opponent" },
 ]
