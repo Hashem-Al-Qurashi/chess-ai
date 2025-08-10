@@ -151,4 +151,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Good vs Bad Bishop", description: "A bishop unimpeded by its own pawns vs one blocked by pawns on same color" },
   { name: "Triangulation", description: "A king maneuver in 3 moves to reach the same square but transfer the move to the opponent" },
   { name: "Opposition", description: "In king and pawn endgames, placing your king directly opposite the enemy king" },
+  { name: "Positional Sacrifice", description: "Sacrificing material for long-term positional advantage rather than immediate tactics" },
 ]
