@@ -408,4 +408,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "D05", name: "Colle System: Main Line", moves: "1.d4 d5 2.Nf3 Nf6 3.e3 e6 4.Bd3 c5 5.c3" },
   { eco: "E63", name: "King's Indian: Fianchetto, Panno Main Line", moves: "1.d4 Nf6 2.c4 g6 3.Nf3 Bg7 4.g3 O-O 5.Bg2 d6 6.O-O Nc6 7.Nc3 a6" },
   { eco: "D82", name: "Grünfeld: Brinckmann Attack", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Bf4" },
+  { eco: "B29", name: "Sicilian: Nimzowitsch Variation", moves: "1.e4 c5 2.Nf3 Nf6" },
 ]
