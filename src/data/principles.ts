@@ -536,4 +536,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Middlegame", tip: "Document deflection tactical pattern" },
   { category: "Strategy", tip: "Refine Reti defense strategy" },
   { category: "Endgame", tip: "Add Caro-Kann opening variation analysis" },
+  { category: "Middlegame", tip: "Add zugzwang puzzle example" },
 ]
