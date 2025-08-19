@@ -154,4 +154,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Positional Sacrifice", description: "Sacrificing material for long-term positional advantage rather than immediate tactics" },
   { name: "Trapped Piece", description: "Maneuvering to leave an enemy piece with no safe squares" },
   { name: "Back Rank Mate", description: "Checkmate delivered on the back rank when the king is trapped by its own pawns" },
+  { name: "Passed Pawn", description: "A pawn with no enemy pawns blocking or guarding its advance to promotion" },
 ]
