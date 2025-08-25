@@ -548,4 +548,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Analyze King coordination principle" },
   { category: "Opening", tip: "Document x-ray tactical pattern" },
   { category: "Opening", tip: "Add Alekhine opening variation analysis" },
+  { category: "Opening", tip: "Improve King endgame technique" },
 ]
