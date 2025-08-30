@@ -424,4 +424,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "C82", name: "Ruy Lopez: Open, Italian Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 d5 8.dxe5 Be6 9.c3" },
   { eco: "B63", name: "Sicilian: Richter-Rauzer, Classical", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bg5 e6 7.Qd2" },
   { eco: "A35", name: "English Opening: Symmetrical, Four Knights", moves: "1.c4 c5 2.Nc3 Nc6 3.Nf3" },
+  { eco: "B73", name: "Sicilian: Dragon, Classical, Battery Variation", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6 6.Be3 Bg7 7.Be2 Nc6 8.Qd2" },
 ]
