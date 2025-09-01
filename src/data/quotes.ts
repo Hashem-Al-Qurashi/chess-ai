@@ -116,4 +116,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Garry Kasparov", text: "Chess is mental torture." },
   { author: "Vladimir Kramnik", text: "Chess is an incredibly emotional game." },
   { author: "Gata Kamsky", text: "The most difficult phase is the transition from opening to middlegame." },
+  { author: "Boris Spassky", text: "The best move is the one that improves the worst-placed piece." },
 ]
