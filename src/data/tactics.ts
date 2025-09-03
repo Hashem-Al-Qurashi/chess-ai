@@ -168,4 +168,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Smothered Mate", description: "Checkmate by a knight when the king is surrounded by its own pieces" },
   { name: "Pawn Majority", description: "Having more pawns on one side of the board to create a passed pawn" },
   { name: "Fortress", description: "A defensive formation that cannot be breached despite material disadvantage" },
+  { name: "Doubled Pawns", description: "Two pawns of the same color on the same file, often a structural weakness" },
 ]
