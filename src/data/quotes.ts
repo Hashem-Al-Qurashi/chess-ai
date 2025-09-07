@@ -120,4 +120,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Ding Liren", text: "Every move creates a new position, and every position demands a new evaluation." },
   { author: "Vassily Smyslov", text: "In chess, as in life, a man is his own most dangerous opponent." },
   { author: "Reuben Fine", text: "A combination is a forced series of moves with sacrifice leading to advantage." },
+  { author: "Hikaru Nakamura", text: "Chess is not always about winning. Sometimes it's about learning." },
 ]
