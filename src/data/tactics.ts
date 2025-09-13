@@ -180,4 +180,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Greek Gift Sacrifice", description: "The classic bishop sacrifice on h7 to expose the castled king" },
   { name: "Deflection", description: "Forcing a defensive piece away from its protective duty" },
   { name: "Isolated Pawn", description: "A pawn with no friendly pawns on adjacent files for support" },
+  { name: "Prophylaxis", description: "A preventive move that stops the opponent's plan before it begins" },
 ]
