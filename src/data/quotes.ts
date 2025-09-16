@@ -125,4 +125,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Fabiano Caruana", text: "The hardest game to win is a won game." },
   { author: "Alexander Alekhine", text: "I consider chess an art, and accept all the responsibilities that go with it." },
   { author: "Judit Polgar", text: "I always play to win." },
+  { author: "Tigran Petrosian", text: "Some sacrifices are sound; the rest are mine." },
 ]
