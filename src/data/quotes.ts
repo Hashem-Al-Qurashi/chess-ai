@@ -128,4 +128,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Tigran Petrosian", text: "Some sacrifices are sound; the rest are mine." },
   { author: "Samuel Reshevsky", text: "Good players develop a sense of danger." },
   { author: "Siegbert Tarrasch", text: "Chess, like love, like music, has the power to make men happy." },
+  { author: "Shakhriyar Mamedyarov", text: "Play the board, not the opponent." },
 ]
