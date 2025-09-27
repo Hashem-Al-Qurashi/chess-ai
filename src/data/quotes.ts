@@ -132,4 +132,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Svetozar Gligoric", text: "The great master places a knight at e5; checkmate follows by itself." },
   { author: "Veselin Topalov", text: "In chess, knowledge is a very transient thing." },
   { author: "Paul Morphy", text: "Help your pieces so they can help you." },
+  { author: "Richard Réti", text: "A knowledge of combinative play is the foundation of chess." },
 ]
