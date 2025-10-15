@@ -140,4 +140,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Susan Polgar", text: "Chess is the gymnasium of the mind." },
   { author: "Rudolf Spielmann", text: "Play the opening like a book, the middle game like a magician, and the endgame like a machine." },
   { author: "Savielly Tartakower", text: "The winner of the game is the player who makes the next-to-last mistake." },
+  { author: "Levon Aronian", text: "Chess is a beautiful mistress to which we keep coming back." },
 ]
