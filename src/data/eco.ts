@@ -529,4 +529,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "C68", name: "Ruy Lopez: Exchange Variation", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6" },
   { eco: "E32", name: "Nimzo-Indian: Classical Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qc2" },
   { eco: "A52", name: "Budapest Gambit: Fajarowicz Variation", moves: "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4" },
+  { eco: "B30", name: "Sicilian: Rossolimo Variation", moves: "1.e4 c5 2.Nf3 Nc6 3.Bb5" },
 ]
