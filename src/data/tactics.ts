@@ -206,4 +206,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Weak Color Complex", description: "Exploiting squares of one color when the opponent's same-colored bishop is absent" },
   { name: "King Safety", description: "Ensuring the king is protected, usually through castling and pawn cover" },
   { name: "Clearance Sacrifice", description: "Sacrificing a piece to clear a square or line for another piece" },
+  { name: "Outpost", description: "A square in enemy territory protected by a pawn where a piece cannot be driven away" },
 ]
