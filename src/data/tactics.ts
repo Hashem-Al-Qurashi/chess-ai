@@ -207,4 +207,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "King Safety", description: "Ensuring the king is protected, usually through castling and pawn cover" },
   { name: "Clearance Sacrifice", description: "Sacrificing a piece to clear a square or line for another piece" },
   { name: "Outpost", description: "A square in enemy territory protected by a pawn where a piece cannot be driven away" },
+  { name: "Space Advantage", description: "Controlling more squares, especially in the center, limiting opponent's mobility" },
 ]
