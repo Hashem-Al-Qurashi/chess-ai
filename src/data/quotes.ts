@@ -143,4 +143,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Levon Aronian", text: "Chess is a beautiful mistress to which we keep coming back." },
   { author: "Max Euwe", text: "Strategy requires thought, tactics require observation." },
   { author: "Akiba Rubinstein", text: "Who is your opponent tonight? Tonight I am playing against the black pieces." },
+  { author: "Teimour Radjabov", text: "Good positions don't win games, good moves do." },
 ]
