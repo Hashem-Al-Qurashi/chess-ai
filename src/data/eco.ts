@@ -577,4 +577,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "C54", name: "Italian Game: Giuoco Piano", moves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3" },
   { eco: "A82", name: "Dutch Defense: Staunton Gambit", moves: "1.d4 f5 2.e4" },
   { eco: "C66", name: "Ruy Lopez: Berlin, Closed", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O d6" },
+  { eco: "D30", name: "Queen's Gambit Declined", moves: "1.d4 d5 2.c4 e6" },
 ]
