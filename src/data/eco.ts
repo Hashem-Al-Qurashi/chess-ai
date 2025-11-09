@@ -591,4 +591,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "D03", name: "Torre Attack", moves: "1.d4 d5 2.Nf3 Nf6 3.Bg5" },
   { eco: "D31", name: "Queen's Gambit Declined: Semi-Tarrasch", moves: "1.d4 d5 2.c4 e6 3.Nc3" },
   { eco: "A48", name: "King's Indian: East Indian Defense", moves: "1.d4 Nf6 2.Nf3 g6" },
+  { eco: "E38", name: "Nimzo-Indian: Classical, Main Line", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qc2 c5" },
 ]
