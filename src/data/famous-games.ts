@@ -574,4 +574,5 @@ export const famousGames: FamousGame[] = [
   { year: 1872, white: "Study", black: "Analysis", name: "Improve Bishop endgame technique" },
   { year: 1949, white: "Study", black: "Analysis", name: "Expand Slav repertoire data" },
   { year: 1980, white: "Study", black: "Analysis", name: "Add Slav opening variation analysis" },
+  { year: 2023, white: "Study", black: "Analysis", name: "Improve Rook endgame technique" },
 ]
