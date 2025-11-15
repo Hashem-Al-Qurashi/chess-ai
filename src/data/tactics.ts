@@ -225,4 +225,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Pawn Storm", description: "Advancing a line of pawns toward the enemy king to open lines for attack" },
   { name: "Perpetual Check", description: "Forcing a draw by giving check repeatedly when the opponent cannot escape" },
   { name: "Piece Activity", description: "Improving piece placement to control key squares and lines" },
+  { name: "Rook Lift", description: "Moving a rook to the third or fourth rank to participate in a kingside attack" },
 ]
