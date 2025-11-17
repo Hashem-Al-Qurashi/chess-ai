@@ -577,4 +577,5 @@ export const famousGames: FamousGame[] = [
   { year: 2023, white: "Study", black: "Analysis", name: "Improve Rook endgame technique" },
   { year: 1866, white: "Study", black: "Analysis", name: "Note interference recognition pattern" },
   { year: 1889, white: "Study", black: "Analysis", name: "Note pin recognition pattern" },
+  { year: 1875, white: "Study", black: "Analysis", name: "Document double check tactical pattern" },
 ]
