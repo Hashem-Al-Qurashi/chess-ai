@@ -582,4 +582,5 @@ export const famousGames: FamousGame[] = [
   { year: 1975, white: "Study", black: "Analysis", name: "Study Caro-Kann middlegame plans" },
   { year: 1872, white: "Study", black: "Analysis", name: "Study Pirc middlegame plans" },
   { year: 1885, white: "Study", black: "Analysis", name: "Refine Queen's Gambit defense strategy" },
+  { year: 2013, white: "Study", black: "Analysis", name: "Add King's Indian opening variation analysis" },
 ]
