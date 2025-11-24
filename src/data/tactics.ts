@@ -230,4 +230,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Pawn Majority", description: "Having more pawns on one side of the board to create a passed pawn" },
   { name: "Fortress", description: "A defensive formation that cannot be breached despite material disadvantage" },
   { name: "Doubled Pawns", description: "Two pawns of the same color on the same file, often a structural weakness" },
+  { name: "Pawn Chain", description: "A diagonal line of pawns, strong when pointing toward the enemy king" },
 ]
