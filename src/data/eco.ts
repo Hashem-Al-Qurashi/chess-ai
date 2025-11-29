@@ -614,4 +614,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "E41", name: "Nimzo-Indian: Hübner Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 c5" },
   { eco: "B97", name: "Sicilian: Najdorf, Poisoned Pawn", moves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bg5 e6 7.f4 Qb6" },
   { eco: "E80", name: "King's Indian: Sämisch Variation", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f3" },
+  { eco: "B43", name: "Sicilian: Kan, Main Line", moves: "1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 a6 5.Nc3" },
 ]
