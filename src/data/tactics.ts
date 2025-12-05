@@ -240,4 +240,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Interference", description: "Placing a piece between two enemy pieces that are coordinating" },
   { name: "Greek Gift Sacrifice", description: "The classic bishop sacrifice on h7 to expose the castled king" },
   { name: "Deflection", description: "Forcing a defensive piece away from its protective duty" },
+  { name: "Isolated Pawn", description: "A pawn with no friendly pawns on adjacent files for support" },
 ]
