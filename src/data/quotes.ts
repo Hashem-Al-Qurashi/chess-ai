@@ -159,4 +159,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Viktor Korchnoi", text: "No chess grandmaster is normal; they only differ in the extent of their madness." },
   { author: "Maxime Vachier-Lagrave", text: "Attack where your opponent is weakest." },
   { author: "Aron Nimzowitsch", text: "The threat is stronger than the execution." },
+  { author: "Wesley So", text: "Patience is the most valuable trait in chess." },
 ]
