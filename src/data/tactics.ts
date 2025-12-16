@@ -253,4 +253,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Overloading", description: "Giving a piece too many defensive tasks so it cannot handle all of them" },
   { name: "Desperado", description: "A piece that is going to be captured anyway captures as much as possible first" },
   { name: "Zwischenzug", description: "An intermediate move played before the expected recapture or continuation" },
+  { name: "Exchange Sacrifice", description: "Giving up a rook for a minor piece to gain positional or tactical compensation" },
 ]
