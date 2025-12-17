@@ -579,4 +579,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Opening", tip: "Add x-ray puzzle example" },
   { category: "Strategy", tip: "Document discovered attack tactical pattern" },
   { category: "Middlegame", tip: "Note skewer recognition pattern" },
+  { category: "Strategy", tip: "Document discovered attack tactical pattern" },
 ]
