@@ -658,4 +658,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "D98", name: "Grünfeld: Russian, Smyslov Variation", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4 Bg4" },
   { eco: "D97", name: "Grünfeld: Russian System", moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3" },
   { eco: "D45", name: "Queen's Gambit Declined: Semi-Slav, Main Line", moves: "1.d4 d5 2.c4 c6 3.Nf3 Nf6 4.Nc3 e6 5.e3" },
+  { eco: "C30", name: "King's Gambit", moves: "1.e4 e5 2.f4" },
 ]
