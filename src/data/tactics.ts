@@ -256,4 +256,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Exchange Sacrifice", description: "Giving up a rook for a minor piece to gain positional or tactical compensation" },
   { name: "Blockade", description: "Placing a piece in front of an enemy pawn to prevent its advance" },
   { name: "Pin", description: "An attacked piece cannot move without exposing a more valuable piece behind it" },
+  { name: "Stalemate Trap", description: "Setting up a position where the opponent has no legal moves but is not in check" },
 ]
