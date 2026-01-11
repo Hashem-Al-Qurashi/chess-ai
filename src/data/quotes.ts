@@ -173,4 +173,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Hikaru Nakamura", text: "Chess is not always about winning. Sometimes it's about learning." },
   { author: "Wilhelm Steinitz", text: "The king is a fighting piece. Use it!" },
   { author: "Fabiano Caruana", text: "The hardest game to win is a won game." },
+  { author: "Alexander Alekhine", text: "I consider chess an art, and accept all the responsibilities that go with it." },
 ]
