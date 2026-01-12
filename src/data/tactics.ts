@@ -277,4 +277,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Trapped Piece", description: "Maneuvering to leave an enemy piece with no safe squares" },
   { name: "Back Rank Mate", description: "Checkmate delivered on the back rank when the king is trapped by its own pawns" },
   { name: "Passed Pawn", description: "A pawn with no enemy pawns blocking or guarding its advance to promotion" },
+  { name: "Minority Attack", description: "Advancing pawns on the side where you have fewer pawns to weaken the opponent's structure" },
 ]
