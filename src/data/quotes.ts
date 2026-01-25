@@ -180,4 +180,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Siegbert Tarrasch", text: "Chess, like love, like music, has the power to make men happy." },
   { author: "Shakhriyar Mamedyarov", text: "Play the board, not the opponent." },
   { author: "Svetozar Gligoric", text: "The great master places a knight at e5; checkmate follows by itself." },
+  { author: "Veselin Topalov", text: "In chess, knowledge is a very transient thing." },
 ]
