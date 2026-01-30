@@ -603,4 +603,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Analyze Pawn coordination principle" },
   { category: "Opening", tip: "Add Queen activity evaluation" },
   { category: "Middlegame", tip: "Add Pirc opening variation analysis" },
+  { category: "Opening", tip: "Add Rook activity evaluation" },
 ]
