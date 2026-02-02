@@ -612,4 +612,5 @@ export const endgamePositions: Endgame[] = [
   { name: "King vs Queen Study", fen: "8/8/8/4k3/8/4K3/8/8 w - - 0 1" },
   { name: "Knight vs Rook Study", fen: "8/8/8/4k3/8/4K3/8/8 w - - 0 1" },
   { name: "Knight vs Rook Study", fen: "8/8/8/4k3/8/4K3/8/8 w - - 0 1" },
+  { name: "King vs Rook Study", fen: "8/8/8/4k3/8/4K3/8/8 w - - 0 1" },
 ]
