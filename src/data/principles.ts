@@ -609,4 +609,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Refine Nimzo-Indian defense strategy" },
   { category: "Middlegame", tip: "Document double check tactical pattern" },
   { category: "Strategy", tip: "Record x-ray combination motif" },
+  { category: "Strategy", tip: "Expand Caro-Kann repertoire data" },
 ]
