@@ -611,4 +611,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Record x-ray combination motif" },
   { category: "Strategy", tip: "Expand Caro-Kann repertoire data" },
   { category: "Endgame", tip: "Improve Rook endgame technique" },
+  { category: "Endgame", tip: "Add skewer puzzle example" },
 ]
