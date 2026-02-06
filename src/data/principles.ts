@@ -614,4 +614,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Add skewer puzzle example" },
   { category: "Endgame", tip: "Note zugzwang recognition pattern" },
   { category: "Endgame", tip: "Note deflection recognition pattern" },
+  { category: "Endgame", tip: "Add zugzwang puzzle example" },
 ]
