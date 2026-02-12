@@ -300,4 +300,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Connected Rooks", description: "Two rooks on the same rank or file supporting each other" },
   { name: "Interference", description: "Placing a piece between two enemy pieces that are coordinating" },
   { name: "Greek Gift Sacrifice", description: "The classic bishop sacrifice on h7 to expose the castled king" },
+  { name: "Deflection", description: "Forcing a defensive piece away from its protective duty" },
 ]
