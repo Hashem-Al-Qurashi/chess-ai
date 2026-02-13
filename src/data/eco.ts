@@ -768,4 +768,5 @@ export const ecoOpenings: EcoOpening[] = [
   { eco: "E67", name: "King's Indian: Fianchetto, Classical", moves: "1.d4 Nf6 2.c4 g6 3.g3 Bg7 4.Bg2 O-O 5.Nc3 d6 6.Nf3 Nbd7" },
   { eco: "E16", name: "Queen's Indian: Capablanca Variation", moves: "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.g3 Bb7 5.Bg2 Bb4+" },
   { eco: "C88", name: "Ruy Lopez: Closed, Anti-Marshall", moves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 O-O 8.a4" },
+  { eco: "B03", name: "Alekhine's Defense: Four Pawns Attack", moves: "1.e4 Nf6 2.e5 Nd5 3.d4 d6 4.c4 Nb6 5.f4" },
 ]
