@@ -617,4 +617,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Add zugzwang puzzle example" },
   { category: "Opening", tip: "Document zugzwang tactical pattern" },
   { category: "Opening", tip: "Record interference combination motif" },
+  { category: "Opening", tip: "Document interference tactical pattern" },
 ]
