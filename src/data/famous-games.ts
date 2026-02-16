@@ -618,4 +618,5 @@ export const famousGames: FamousGame[] = [
   { year: 1961, white: "Study", black: "Analysis", name: "Improve Bishop endgame technique" },
   { year: 2017, white: "Study", black: "Analysis", name: "Add Grunfeld opening variation analysis" },
   { year: 1870, white: "Study", black: "Analysis", name: "Update Rook movement logic notes" },
+  { year: 2023, white: "Study", black: "Analysis", name: "Refine King's Gambit defense strategy" },
 ]
