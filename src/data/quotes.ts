@@ -188,4 +188,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Pal Benko", text: "One bad move nullifies forty good ones." },
   { author: "Edmar Mednis", text: "The most important feature of the chess position is the activity of the pieces." },
   { author: "Susan Polgar", text: "Chess is the gymnasium of the mind." },
+  { author: "Rudolf Spielmann", text: "Play the opening like a book, the middle game like a magician, and the endgame like a machine." },
 ]
