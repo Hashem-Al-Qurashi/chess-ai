@@ -620,4 +620,5 @@ export const famousGames: FamousGame[] = [
   { year: 1870, white: "Study", black: "Analysis", name: "Update Rook movement logic notes" },
   { year: 2023, white: "Study", black: "Analysis", name: "Refine King's Gambit defense strategy" },
   { year: 1939, white: "Study", black: "Analysis", name: "Analyze Rook coordination principle" },
+  { year: 2013, white: "Study", black: "Analysis", name: "Expand King's Indian repertoire data" },
 ]
