@@ -623,4 +623,5 @@ export const famousGames: FamousGame[] = [
   { year: 2013, white: "Study", black: "Analysis", name: "Expand King's Indian repertoire data" },
   { year: 1910, white: "Study", black: "Analysis", name: "Add Grunfeld opening variation analysis" },
   { year: 1850, white: "Study", black: "Analysis", name: "Record windmill combination motif" },
+  { year: 2012, white: "Study", black: "Analysis", name: "Add zugzwang puzzle example" },
 ]
