@@ -623,4 +623,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Strategy", tip: "Note overloading recognition pattern" },
   { category: "Endgame", tip: "Add decoy puzzle example" },
   { category: "Opening", tip: "Add English opening variation analysis" },
+  { category: "Opening", tip: "Add Grunfeld opening variation analysis" },
 ]
