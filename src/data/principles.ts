@@ -624,4 +624,5 @@ export const chessPrinciples: ChessPrinciple[] = [
   { category: "Endgame", tip: "Add decoy puzzle example" },
   { category: "Opening", tip: "Add English opening variation analysis" },
   { category: "Opening", tip: "Add Grunfeld opening variation analysis" },
+  { category: "Middlegame", tip: "Add double check puzzle example" },
 ]
