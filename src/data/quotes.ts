@@ -189,4 +189,5 @@ export const chessQuotes: ChessQuote[] = [
   { author: "Edmar Mednis", text: "The most important feature of the chess position is the activity of the pieces." },
   { author: "Susan Polgar", text: "Chess is the gymnasium of the mind." },
   { author: "Rudolf Spielmann", text: "Play the opening like a book, the middle game like a magician, and the endgame like a machine." },
+  { author: "Savielly Tartakower", text: "The winner of the game is the player who makes the next-to-last mistake." },
 ]
