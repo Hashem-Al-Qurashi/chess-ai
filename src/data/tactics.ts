@@ -313,4 +313,5 @@ export const tacticalPatterns: TacticalPattern[] = [
   { name: "Rook on the Seventh Rank", description: "A rook on the seventh rank attacking pawns and restricting the enemy king" },
   { name: "Overloading", description: "Giving a piece too many defensive tasks so it cannot handle all of them" },
   { name: "Desperado", description: "A piece that is going to be captured anyway captures as much as possible first" },
+  { name: "Zwischenzug", description: "An intermediate move played before the expected recapture or continuation" },
 ]
