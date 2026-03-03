@@ -1,4 +1,4 @@
-import { Chess, Square } from 'chess.js'
+import { Chess, type Square } from 'chess.js'
 import Piece from './Piece'
 import './Board.css'
 

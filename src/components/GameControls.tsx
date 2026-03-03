@@ -1,4 +1,4 @@
-import { GameMode, Difficulty } from '../App'
+import { type GameMode, type Difficulty } from '../App'
 import './GameControls.css'
 
 interface GameControlsProps {

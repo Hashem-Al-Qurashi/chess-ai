@@ -1,5 +1,5 @@
 import { Chess } from 'chess.js'
-import { GameMode } from '../App'
+import { type GameMode } from '../App'
 import './GameStatus.css'
 
 interface GameStatusProps {
