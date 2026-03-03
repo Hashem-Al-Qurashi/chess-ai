@@ -78,3 +78,9 @@
   font-weight: 600;
   opacity: 0.9;
 }
+
+.piece-count {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
