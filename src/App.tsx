@@ -11,6 +11,7 @@ import ChessTimer from './components/ChessTimer'
 import EvalBar from './components/EvalBar'
 import GameStats from './components/GameStats'
 import ShortcutsHelp from './components/ShortcutsHelp'
+import OpeningName from './components/OpeningName'
 import FenLoader from './components/FenLoader'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
@@ -417,6 +418,7 @@ function App() {
             moveHistory={moveHistory}
             elapsed={gameClock.elapsed}
           />
+          <OpeningName pgn={game.pgn()} />
           <ChessTimer timerState={timerState} flipped={boardFlipped} />
           <CapturedPieces game={displayGame} />
           <div className="board-with-eval">
