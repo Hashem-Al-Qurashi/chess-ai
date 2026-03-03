@@ -87,8 +87,12 @@ export default function Board({
     onSquareClick(square)
   }
 
+  const pieceNames: Record<string, string> = {
+    p: 'pawn', n: 'knight', b: 'bishop', r: 'rook', q: 'queen', k: 'king',
+  }
+
   return (
-    <div className={`board${isThinking ? ' ai-thinking' : ''}`}>
+    <div className={`board${isThinking ? ' ai-thinking' : ''}`} role="grid" aria-label="Chess board">
       {displayRanks.map((rank, rowIndex) =>
         displayFiles.map((file, colIndex) => {
           const square = `${file}${rank}`
@@ -111,14 +115,22 @@ export default function Board({
             isHighlighted ? 'highlighted' : '',
           ].filter(Boolean).join(' ')
 
+          const ariaLabel = piece
+            ? `${piece.color === 'w' ? 'White' : 'Black'} ${pieceNames[piece.type]} on ${square}`
+            : `Empty square ${square}`
+
           return (
             <div
               key={square}
               className={classNames}
+              role="gridcell"
+              aria-label={ariaLabel}
+              tabIndex={0}
               onClick={() => handleSquareClick(square)}
               onContextMenu={(e) => handleContextMenu(e, square)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop_(e, square)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSquareClick(square) } }}
             >
               {/* Coordinate labels */}
               {colIndex === 0 && (
