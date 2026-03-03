@@ -56,6 +56,21 @@ export function useSound() {
     setTimeout(() => createTone(ctx, 1000, 0.15, 'square', 0.12), 100)
   }, [getCtx])
 
+  const playCastle = useCallback(() => {
+    if (!enabledRef.current) return
+    const ctx = getCtx()
+    createTone(ctx, 500, 0.06, 'sine', 0.2)
+    setTimeout(() => createTone(ctx, 700, 0.08, 'sine', 0.15), 70)
+  }, [getCtx])
+
+  const playPromotion = useCallback(() => {
+    if (!enabledRef.current) return
+    const ctx = getCtx()
+    createTone(ctx, 500, 0.1, 'sine', 0.2)
+    setTimeout(() => createTone(ctx, 700, 0.1, 'sine', 0.2), 100)
+    setTimeout(() => createTone(ctx, 900, 0.15, 'sine', 0.25), 200)
+  }, [getCtx])
+
   const playGameOver = useCallback(() => {
     if (!enabledRef.current) return
     const ctx = getCtx()
@@ -69,5 +84,5 @@ export function useSound() {
     return enabledRef.current
   }, [])
 
-  return { playMove, playCapture, playCheck, playGameOver, toggleSound, enabled: enabledRef }
+  return { playMove, playCapture, playCheck, playCastle, playPromotion, playGameOver, toggleSound, enabled: enabledRef }
 }

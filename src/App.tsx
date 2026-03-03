@@ -46,13 +46,17 @@ function App() {
   const isViewingLatest = viewIndex === moveHistory.length - 1 || (viewIndex === -1 && moveHistory.length === 0)
   const displayGame = isViewingLatest ? game : new Chess(fenHistory[viewIndex + 1])
 
-  const playMoveSound = useCallback((game: Chess, captured: boolean) => {
+  const playMoveSound = useCallback((game: Chess, move: { captured?: string; san: string }) => {
     if (game.isCheckmate() || game.isDraw()) {
       sound.playGameOver()
       pauseTimer()
     } else if (game.inCheck()) {
       sound.playCheck()
-    } else if (captured) {
+    } else if (move.san === 'O-O' || move.san === 'O-O-O') {
+      sound.playCastle()
+    } else if (move.san.includes('=')) {
+      sound.playPromotion()
+    } else if (move.captured) {
       sound.playCapture()
     } else {
       sound.playMove()
@@ -86,7 +90,6 @@ function App() {
         selectedMove = getBestMove(currentGame, 3)
       }
 
-      const captured = !!selectedMove.captured
       currentGame.move(selectedMove)
       const newFen = currentGame.fen()
       setGame(new Chess(newFen))
@@ -94,7 +97,7 @@ function App() {
       setFenHistory(prev => [...prev, newFen])
       setViewIndex(prev => prev + 1)
       setLastMove({ from: selectedMove.from, to: selectedMove.to })
-      playMoveSound(currentGame, captured)
+      playMoveSound(currentGame, selectedMove)
       if (!currentGame.isGameOver()) {
         switchTurn(currentGame.turn())
       }
@@ -129,7 +132,7 @@ function App() {
           setFenHistory(prev => [...prev, newGame.fen()])
           setViewIndex(prev => prev + 1)
           setLastMove({ from: move.from, to: move.to })
-          playMoveSound(newGame, !!move.captured)
+          playMoveSound(newGame, result)
           if (!newGame.isGameOver()) {
             switchTurn(newGame.turn())
           }
@@ -186,7 +189,7 @@ function App() {
       setFenHistory(prev => [...prev, newGame.fen()])
       setViewIndex(prev => prev + 1)
       setLastMove({ from: move.from, to: move.to })
-      playMoveSound(newGame, !!move.captured)
+      playMoveSound(newGame, result)
       if (!newGame.isGameOver()) {
         switchTurn(newGame.turn())
       }
@@ -247,7 +250,7 @@ function App() {
       setFenHistory(prev => [...prev, newGame.fen()])
       setViewIndex(prev => prev + 1)
       setLastMove({ from: pendingPromotion.from, to: pendingPromotion.to })
-      playMoveSound(newGame, !!result.captured)
+      playMoveSound(newGame, result)
       if (!newGame.isGameOver()) {
         switchTurn(newGame.turn())
       }
