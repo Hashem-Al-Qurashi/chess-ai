@@ -10,6 +10,7 @@ import ChessTimer from './components/ChessTimer'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
+import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import './App.css'
 
 export type GameMode = 'local' | 'ai'
@@ -268,6 +269,15 @@ function App() {
       switchTurn(game.turn())
     }
   }, [moveHistory.length, timerState.timeControl, timerState.activeColor, timerState.isExpired, switchTurn, game])
+
+  useKeyboardShortcuts({
+    onPrevMove: () => handleGoToMove(viewIndex - 1),
+    onNextMove: () => handleGoToMove(viewIndex + 1),
+    onFirstMove: () => handleGoToMove(-1),
+    onLastMove: () => handleGoToMove(moveHistory.length - 1),
+    onUndo: handleUndo,
+    onFlip: handleFlipBoard,
+  })
 
   return (
     <div className="app">
