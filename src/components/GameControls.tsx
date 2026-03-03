@@ -13,6 +13,7 @@ interface GameControlsProps {
   autoQueen: boolean
   onNewGame: (mode: GameMode, difficulty?: Difficulty, color?: 'w' | 'b') => void
   onToggleAutoQueen: () => void
+  onResign: () => void
   onUndo: () => void
   onFlipBoard: () => void
   onToggleSound: () => void
@@ -48,6 +49,7 @@ export default function GameControls({
   autoQueen,
   onNewGame,
   onToggleAutoQueen,
+  onResign,
   onUndo,
   onFlipBoard,
   onToggleSound,
@@ -186,9 +188,14 @@ export default function GameControls({
       </div>
 
       <div className="control-section">
-        <button className="btn btn-secondary full-width" onClick={handleCopyPGN} disabled={!pgn}>
-          {copied ? 'Copied!' : 'Copy PGN'}
-        </button>
+        <div className="button-group">
+          <button className="btn btn-secondary full-width" onClick={handleCopyPGN} disabled={!pgn}>
+            {copied ? 'Copied!' : 'Copy PGN'}
+          </button>
+          <button className="btn btn-danger" onClick={onResign} disabled={!gameInProgress}>
+            Resign
+          </button>
+        </div>
       </div>
     </div>
   )

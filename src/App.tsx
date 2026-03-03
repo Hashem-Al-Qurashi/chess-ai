@@ -38,6 +38,7 @@ function App() {
   const [soundEnabled, setSoundEnabled] = useState(true)
   const [autoQueen, setAutoQueen] = useState(false)
   const [showGameOver, setShowGameOver] = useState(false)
+  const [resigned, setResigned] = useState<'w' | 'b' | null>(null)
   const [stats, setStats] = useState({ wins: 0, losses: 0, draws: 0 })
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
@@ -109,6 +110,7 @@ function App() {
   const handleSquareClick = useCallback((square: string) => {
     if (isThinking) return
     if (timerState.isExpired) return
+    if (resigned) return
     if (!isViewingLatest) return
     if (gameMode === 'ai' && game.turn() !== playerColor) return
 
@@ -188,6 +190,7 @@ function App() {
   const handleDrop = useCallback((from: string, to: string) => {
     if (isThinking) return
     if (timerState.isExpired) return
+    if (resigned) return
     if (!isViewingLatest) return
     if (gameMode === 'ai' && game.turn() !== playerColor) return
 
@@ -246,6 +249,7 @@ function App() {
     setLastMove(null)
     setIsThinking(false)
     setShowGameOver(false)
+    setResigned(null)
     gameClock.reset()
     setGameMode(mode)
     if (diff) setDifficulty(diff)
@@ -304,6 +308,21 @@ function App() {
     setSelectedSquare(null)
     setLegalMoves([])
   }, [moveHistory.length])
+
+  const handleResign = useCallback(() => {
+    if (game.isGameOver() || resigned) return
+    if (!confirm('Are you sure you want to resign?')) return
+    const loser = gameMode === 'ai' ? playerColor : game.turn()
+    setResigned(loser)
+    pauseTimer()
+    gameClock.stop()
+    if (gameMode === 'ai') {
+      setStats(prev => ({ ...prev, losses: prev.losses + 1 }))
+    } else {
+      setStats(prev => ({ ...prev, wins: prev.wins + 1 }))
+    }
+    setTimeout(() => setShowGameOver(true), 300)
+  }, [game, resigned, gameMode, playerColor, pauseTimer, gameClock])
 
   const handleFlipBoard = useCallback(() => {
     setBoardFlipped(prev => !prev)
@@ -422,6 +441,7 @@ function App() {
             autoQueen={autoQueen}
             onNewGame={handleNewGame}
             onToggleAutoQueen={() => setAutoQueen(prev => !prev)}
+            onResign={handleResign}
             onUndo={handleUndo}
             onFlipBoard={handleFlipBoard}
             onToggleSound={() => { sound.toggleSound(); setSoundEnabled(prev => !prev) }}
@@ -442,6 +462,7 @@ function App() {
           gameMode={gameMode}
           playerColor={playerColor}
           timeExpired={timerState.isExpired}
+          resigned={resigned}
           onPlayAgain={() => handleNewGame(gameMode, difficulty, playerColor)}
           onClose={() => setShowGameOver(false)}
         />
