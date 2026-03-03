@@ -20,6 +20,8 @@ function App() {
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null)
   const [legalMoves, setLegalMoves] = useState<string[]>([])
   const [moveHistory, setMoveHistory] = useState<string[]>([])
+  const [fenHistory, setFenHistory] = useState<string[]>([new Chess().fen()])
+  const [viewIndex, setViewIndex] = useState(-1)
   const [gameMode, setGameMode] = useState<GameMode>('local')
   const [difficulty, setDifficulty] = useState<Difficulty>('medium')
   const [playerColor, setPlayerColor] = useState<'w' | 'b'>('w')
@@ -31,6 +33,9 @@ function App() {
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
   const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
+
+  const isViewingLatest = viewIndex === moveHistory.length - 1 || (viewIndex === -1 && moveHistory.length === 0)
+  const displayGame = isViewingLatest ? game : new Chess(fenHistory[viewIndex + 1])
 
   const playMoveSound = useCallback((game: Chess, captured: boolean) => {
     if (game.isCheckmate() || game.isDraw()) {
@@ -74,8 +79,11 @@ function App() {
 
       const captured = !!selectedMove.captured
       currentGame.move(selectedMove)
-      setGame(new Chess(currentGame.fen()))
+      const newFen = currentGame.fen()
+      setGame(new Chess(newFen))
       setMoveHistory(prev => [...prev, selectedMove.san])
+      setFenHistory(prev => [...prev, newFen])
+      setViewIndex(prev => prev + 1)
       setLastMove({ from: selectedMove.from, to: selectedMove.to })
       playMoveSound(currentGame, captured)
       if (!currentGame.isGameOver()) {
@@ -88,6 +96,7 @@ function App() {
   const handleSquareClick = useCallback((square: string) => {
     if (isThinking) return
     if (timerState.isExpired) return
+    if (!isViewingLatest) return
     if (gameMode === 'ai' && game.turn() !== playerColor) return
 
     if (selectedSquare) {
@@ -108,6 +117,8 @@ function App() {
         if (result) {
           setGame(newGame)
           setMoveHistory(prev => [...prev, result.san])
+          setFenHistory(prev => [...prev, newGame.fen()])
+          setViewIndex(prev => prev + 1)
           setLastMove({ from: move.from, to: move.to })
           playMoveSound(newGame, !!move.captured)
           if (!newGame.isGameOver()) {
@@ -142,11 +153,12 @@ function App() {
       const moves = game.moves({ square: square as any, verbose: true })
       setLegalMoves(moves.map(m => m.to))
     }
-  }, [game, selectedSquare, isThinking, gameMode, playerColor, makeAIMove, switchTurn, timerState.isExpired])
+  }, [game, selectedSquare, isThinking, gameMode, playerColor, makeAIMove, switchTurn, timerState.isExpired, isViewingLatest])
 
   const handleDrop = useCallback((from: string, to: string) => {
     if (isThinking) return
     if (timerState.isExpired) return
+    if (!isViewingLatest) return
     if (gameMode === 'ai' && game.turn() !== playerColor) return
 
     const move = game.moves({ square: from as any, verbose: true }).find(m => m.to === to)
@@ -162,6 +174,8 @@ function App() {
     if (result) {
       setGame(newGame)
       setMoveHistory(prev => [...prev, result.san])
+      setFenHistory(prev => [...prev, newGame.fen()])
+      setViewIndex(prev => prev + 1)
       setLastMove({ from: move.from, to: move.to })
       playMoveSound(newGame, !!move.captured)
       if (!newGame.isGameOver()) {
@@ -174,7 +188,7 @@ function App() {
         makeAIMove(newGame)
       }
     }
-  }, [game, isThinking, gameMode, playerColor, makeAIMove, playMoveSound, switchTurn, timerState.isExpired])
+  }, [game, isThinking, gameMode, playerColor, makeAIMove, playMoveSound, switchTurn, timerState.isExpired, isViewingLatest])
 
   const handleNewGame = useCallback((mode: GameMode, diff?: Difficulty, color?: 'w' | 'b') => {
     const newGame = new Chess()
@@ -182,6 +196,8 @@ function App() {
     setSelectedSquare(null)
     setLegalMoves([])
     setMoveHistory([])
+    setFenHistory([newGame.fen()])
+    setViewIndex(-1)
     setLastMove(null)
     setIsThinking(false)
     setGameMode(mode)
@@ -198,11 +214,13 @@ function App() {
   }, [makeAIMove, resetTimer])
 
   const handleUndo = useCallback(() => {
+    const undoCount = gameMode === 'ai' ? 2 : 1
     const newGame = new Chess(game.fen())
-    newGame.undo()
-    if (gameMode === 'ai') newGame.undo()
+    for (let i = 0; i < undoCount; i++) newGame.undo()
     setGame(newGame)
-    setMoveHistory(prev => gameMode === 'ai' ? prev.slice(0, -2) : prev.slice(0, -1))
+    setMoveHistory(prev => prev.slice(0, -undoCount))
+    setFenHistory(prev => prev.slice(0, -undoCount))
+    setViewIndex(prev => Math.max(-1, prev - undoCount))
     setSelectedSquare(null)
     setLegalMoves([])
     setLastMove(null)
@@ -215,6 +233,8 @@ function App() {
     if (result) {
       setGame(newGame)
       setMoveHistory(prev => [...prev, result.san])
+      setFenHistory(prev => [...prev, newGame.fen()])
+      setViewIndex(prev => prev + 1)
       setLastMove({ from: pendingPromotion.from, to: pendingPromotion.to })
       playMoveSound(newGame, !!result.captured)
       if (!newGame.isGameOver()) {
@@ -230,6 +250,13 @@ function App() {
   const handleTimeControl = useCallback((tc: TimeControl) => {
     startTimer(tc)
   }, [startTimer])
+
+  const handleGoToMove = useCallback((index: number) => {
+    const clamped = Math.max(-1, Math.min(index, moveHistory.length - 1))
+    setViewIndex(clamped)
+    setSelectedSquare(null)
+    setLegalMoves([])
+  }, [moveHistory.length])
 
   const handleFlipBoard = useCallback(() => {
     setBoardFlipped(prev => !prev)
@@ -259,11 +286,11 @@ function App() {
             playerColor={playerColor}
           />
           <ChessTimer timerState={timerState} flipped={boardFlipped} />
-          <CapturedPieces game={game} />
+          <CapturedPieces game={displayGame} />
           <Board
-            game={game}
-            selectedSquare={selectedSquare}
-            legalMoves={legalMoves}
+            game={displayGame}
+            selectedSquare={isViewingLatest ? selectedSquare : null}
+            legalMoves={isViewingLatest ? legalMoves : []}
             lastMove={lastMove}
             flipped={boardFlipped}
             onSquareClick={handleSquareClick}
@@ -283,7 +310,7 @@ function App() {
             onTimeControl={handleTimeControl}
             canUndo={moveHistory.length > 0 && !isThinking}
           />
-          <MoveHistory moves={moveHistory} />
+          <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
         </div>
       </div>
       {pendingPromotion && (
