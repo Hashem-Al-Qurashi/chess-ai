@@ -11,7 +11,7 @@
 
 .game-over-modal {
   background: var(--bg-secondary);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 32px 40px;
   text-align: center;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
