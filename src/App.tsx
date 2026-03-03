@@ -385,6 +385,7 @@ function App() {
             soundEnabled={soundEnabled}
             timeControl={timerState.timeControl}
             pgn={game.pgn()}
+            gameInProgress={moveHistory.length > 0 && !game.isGameOver()}
             onNewGame={handleNewGame}
             onUndo={handleUndo}
             onFlipBoard={handleFlipBoard}
