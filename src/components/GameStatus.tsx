@@ -1,5 +1,6 @@
 import { Chess } from 'chess.js'
 import { type GameMode } from '../App'
+import { identifyOpening } from '../data/openings'
 import './GameStatus.css'
 
 interface GameStatusProps {
@@ -7,9 +8,11 @@ interface GameStatusProps {
   isThinking: boolean
   gameMode: GameMode
   playerColor: 'w' | 'b'
+  moveHistory: string[]
 }
 
-export default function GameStatus({ game, isThinking, gameMode, playerColor }: GameStatusProps) {
+export default function GameStatus({ game, isThinking, gameMode, playerColor, moveHistory }: GameStatusProps) {
+  const openingName = identifyOpening(moveHistory)
   const getStatus = (): string => {
     if (game.isCheckmate()) {
       const winner = game.turn() === 'w' ? 'Black' : 'White'
@@ -44,6 +47,9 @@ export default function GameStatus({ game, isThinking, gameMode, playerColor }: 
   return (
     <div className={`game-status ${statusClass}`}>
       {getStatus()}
+      {openingName && !game.isGameOver() && (
+        <span className="opening-name"> — {openingName}</span>
+      )}
     </div>
   )
 }
