@@ -41,7 +41,7 @@ function App() {
   const [autoQueen, setAutoQueen] = usePersistedState('chess-auto-queen', false)
   const [showGameOver, setShowGameOver] = useState(false)
   const [resigned, setResigned] = useState<'w' | 'b' | null>(null)
-  const [stats, setStats] = useState({ wins: 0, losses: 0, draws: 0 })
+  const [stats, setStats] = usePersistedState('chess-stats', { wins: 0, losses: 0, draws: 0 })
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
   const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
@@ -453,7 +453,7 @@ function App() {
           />
           <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
           <FenLoader currentFen={game.fen()} onLoadFen={handleLoadFen} />
-          <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} />
+          <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} onReset={() => setStats({ wins: 0, losses: 0, draws: 0 })} />
           <ShortcutsHelp />
         </div>
       </div>
