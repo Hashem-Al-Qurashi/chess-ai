@@ -1,0 +1,47 @@
+.player-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease;
+}
+
+.player-label.active {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.player-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.white-dot {
+  background: #f0f0f0;
+  border: 1px solid #999;
+}
+
+.black-dot {
+  background: #333;
+  border: 1px solid #666;
+}
+
+.player-name {
+  font-weight: 600;
+}
+
+.player-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--accent);
+  color: #fff;
+}
