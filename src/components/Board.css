@@ -93,3 +93,18 @@
 .square.dark .coord {
   color: #e8dcc8;
 }
+
+.piece-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+
+.piece-wrapper:active {
+  cursor: grabbing;
+}
+
+.square.drag-source {
+  opacity: 0.5;
+}
