@@ -22,7 +22,7 @@ interface GameControlsProps {
   canUndo: boolean
 }
 
-export type BoardTheme = 'classic' | 'green' | 'blue' | 'purple' | 'walnut'
+export type BoardTheme = 'classic' | 'green' | 'blue' | 'purple' | 'walnut' | 'coral'
 
 const boardThemes: { value: BoardTheme; label: string }[] = [
   { value: 'walnut', label: 'Walnut' },
@@ -30,6 +30,7 @@ const boardThemes: { value: BoardTheme; label: string }[] = [
   { value: 'green', label: 'Green' },
   { value: 'blue', label: 'Blue' },
   { value: 'purple', label: 'Purple' },
+  { value: 'coral', label: 'Coral' },
 ]
 
 const timeControls: { value: TimeControl; label: string }[] = [

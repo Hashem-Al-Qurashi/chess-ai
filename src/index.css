@@ -64,6 +64,11 @@
   --square-dark: #7b6b4f;
 }
 
+[data-board="coral"] {
+  --square-light: #f5e6d3;
+  --square-dark: #c97856;
+}
+
 * {
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
