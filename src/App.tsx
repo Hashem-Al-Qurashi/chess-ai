@@ -6,6 +6,7 @@ import GameControls from './components/GameControls'
 import GameStatus from './components/GameStatus'
 import PromotionModal from './components/PromotionModal'
 import CapturedPieces from './components/CapturedPieces'
+import GameOverModal from './components/GameOverModal'
 import ChessTimer from './components/ChessTimer'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
@@ -31,6 +32,7 @@ function App() {
   const [boardFlipped, setBoardFlipped] = useState(false)
   const [pendingPromotion, setPendingPromotion] = useState<{ from: string; to: string; color: 'w' | 'b' } | null>(null)
   const [soundEnabled, setSoundEnabled] = useState(true)
+  const [showGameOver, setShowGameOver] = useState(false)
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
   const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
@@ -201,6 +203,7 @@ function App() {
     setViewIndex(-1)
     setLastMove(null)
     setIsThinking(false)
+    setShowGameOver(false)
     setGameMode(mode)
     if (diff) setDifficulty(diff)
     if (color) {
@@ -270,6 +273,14 @@ function App() {
     }
   }, [moveHistory.length, timerState.timeControl, timerState.activeColor, timerState.isExpired, switchTurn, game])
 
+  // Show game over modal
+  useEffect(() => {
+    if (game.isGameOver() || timerState.isExpired) {
+      const timeout = setTimeout(() => setShowGameOver(true), 600)
+      return () => clearTimeout(timeout)
+    }
+  }, [game, timerState.isExpired])
+
   useKeyboardShortcuts({
     onPrevMove: () => handleGoToMove(viewIndex - 1),
     onNextMove: () => handleGoToMove(viewIndex + 1),
@@ -326,6 +337,16 @@ function App() {
       </div>
       {pendingPromotion && (
         <PromotionModal color={pendingPromotion.color} onSelect={handlePromotion} />
+      )}
+      {showGameOver && (
+        <GameOverModal
+          game={game}
+          gameMode={gameMode}
+          playerColor={playerColor}
+          timeExpired={timerState.isExpired}
+          onPlayAgain={() => handleNewGame(gameMode, difficulty, playerColor)}
+          onClose={() => setShowGameOver(false)}
+        />
       )}
     </div>
   )
