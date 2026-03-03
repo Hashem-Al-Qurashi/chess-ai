@@ -51,3 +51,12 @@
   opacity: 0.8;
   font-size: 0.85rem;
 }
+
+.status-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-top: 4px;
+  font-weight: 400;
+}

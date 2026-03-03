@@ -14,6 +14,7 @@ import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
+import { useGameClock } from './hooks/useGameClock'
 import './App.css'
 
 export type GameMode = 'local' | 'ai'
@@ -39,6 +40,7 @@ function App() {
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
   const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
+  const gameClock = useGameClock()
 
   const isViewingLatest = viewIndex === moveHistory.length - 1 || (viewIndex === -1 && moveHistory.length === 0)
   const displayGame = isViewingLatest ? game : new Chess(fenHistory[viewIndex + 1])
@@ -207,6 +209,7 @@ function App() {
     setLastMove(null)
     setIsThinking(false)
     setShowGameOver(false)
+    gameClock.reset()
     setGameMode(mode)
     if (diff) setDifficulty(diff)
     if (color) {
@@ -276,6 +279,16 @@ function App() {
     }
   }, [moveHistory.length, timerState.timeControl, timerState.activeColor, timerState.isExpired, switchTurn, game])
 
+  // Game clock — start on first move, stop on game over
+  useEffect(() => {
+    if (moveHistory.length === 1 && !gameClock.isRunning) {
+      gameClock.start()
+    }
+    if ((game.isGameOver() || timerState.isExpired) && gameClock.isRunning) {
+      gameClock.stop()
+    }
+  }, [moveHistory.length, game, timerState.isExpired, gameClock])
+
   // Show game over modal and record stats
   useEffect(() => {
     if (game.isGameOver() || timerState.isExpired) {
@@ -330,6 +343,7 @@ function App() {
             gameMode={gameMode}
             playerColor={playerColor}
             moveHistory={moveHistory}
+            elapsed={gameClock.elapsed}
           />
           <ChessTimer timerState={timerState} flipped={boardFlipped} />
           <CapturedPieces game={displayGame} />
