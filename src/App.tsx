@@ -144,6 +144,38 @@ function App() {
     }
   }, [game, selectedSquare, isThinking, gameMode, playerColor, makeAIMove, switchTurn, timerState.isExpired])
 
+  const handleDrop = useCallback((from: string, to: string) => {
+    if (isThinking) return
+    if (timerState.isExpired) return
+    if (gameMode === 'ai' && game.turn() !== playerColor) return
+
+    const move = game.moves({ square: from as any, verbose: true }).find(m => m.to === to)
+    if (!move) return
+
+    if (move.piece === 'p' && (move.to[1] === '8' || move.to[1] === '1')) {
+      setPendingPromotion({ from: move.from, to: move.to, color: game.turn() })
+      return
+    }
+
+    const newGame = new Chess(game.fen())
+    const result = newGame.move(move)
+    if (result) {
+      setGame(newGame)
+      setMoveHistory(prev => [...prev, result.san])
+      setLastMove({ from: move.from, to: move.to })
+      playMoveSound(newGame, !!move.captured)
+      if (!newGame.isGameOver()) {
+        switchTurn(newGame.turn())
+      }
+      setSelectedSquare(null)
+      setLegalMoves([])
+
+      if (gameMode === 'ai' && !newGame.isGameOver()) {
+        makeAIMove(newGame)
+      }
+    }
+  }, [game, isThinking, gameMode, playerColor, makeAIMove, playMoveSound, switchTurn, timerState.isExpired])
+
   const handleNewGame = useCallback((mode: GameMode, diff?: Difficulty, color?: 'w' | 'b') => {
     const newGame = new Chess()
     setGame(newGame)
@@ -235,6 +267,7 @@ function App() {
             lastMove={lastMove}
             flipped={boardFlipped}
             onSquareClick={handleSquareClick}
+            onDrop={handleDrop}
           />
         </div>
         <div className="side-panel">
