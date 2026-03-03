@@ -1,0 +1,64 @@
+.chess-timer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.timer-display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  transition: all 0.2s ease;
+}
+
+.timer-display.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.timer-display.expired {
+  background: #e94560;
+  color: #fff;
+}
+
+.timer-display.low-time {
+  animation: timer-pulse 0.5s ease-in-out infinite;
+}
+
+.timer-display.low-time.active {
+  background: #e94560;
+}
+
+.timer-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.timer-display.active .timer-label,
+.timer-display.expired .timer-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.timer-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.timer-display.active .timer-value,
+.timer-display.expired .timer-value {
+  color: #fff;
+}
+
+@keyframes timer-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
