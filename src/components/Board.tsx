@@ -9,6 +9,7 @@ interface BoardProps {
   legalMoves: string[]
   lastMove: { from: string; to: string } | null
   flipped: boolean
+  isThinking?: boolean
   onSquareClick: (square: string) => void
   onDrop: (from: string, to: string) => void
 }
@@ -22,6 +23,7 @@ export default function Board({
   legalMoves,
   lastMove,
   flipped,
+  isThinking,
   onSquareClick,
   onDrop,
 }: BoardProps) {
@@ -86,7 +88,7 @@ export default function Board({
   }
 
   return (
-    <div className="board">
+    <div className={`board${isThinking ? ' ai-thinking' : ''}`}>
       {displayRanks.map((rank, rowIndex) =>
         displayFiles.map((file, colIndex) => {
           const square = `${file}${rank}`
