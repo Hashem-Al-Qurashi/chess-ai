@@ -15,6 +15,7 @@ import OpeningName from './components/OpeningName'
 import FenLoader from './components/FenLoader'
 import PlayerLabel from './components/PlayerLabel'
 import DailyTip from './components/DailyTip'
+import TacticOfDay from './components/TacticOfDay'
 import { ecoOpenings } from './data/eco'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
@@ -536,6 +537,7 @@ function App() {
           <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} onReset={() => setStats({ wins: 0, losses: 0, draws: 0 })} />
           <ShortcutsHelp />
           <DailyTip />
+          <TacticOfDay />
         </div>
       </div>
       {pendingPromotion && (
