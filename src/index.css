@@ -8,6 +8,7 @@
   --text-primary: #e0e0e0;
   --text-secondary: #8892b0;
   --text-white: #fff;
+  --text-muted: #5a6270;
   --accent: #e94560;
   --square-light: #e8dcc8;
   --square-dark: #7b6b4f;
@@ -33,6 +34,7 @@
   --text-primary: #2d2d2d;
   --text-secondary: #666;
   --text-white: #fff;
+  --text-muted: #aaa;
   --accent: #e94560;
   --square-light: #f0d9b5;
   --square-dark: #b58863;
