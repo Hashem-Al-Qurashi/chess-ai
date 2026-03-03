@@ -1,0 +1,37 @@
+.captured-pieces {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.captured-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 28px;
+}
+
+.captured-label {
+  font-weight: 700;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  width: 14px;
+  text-align: center;
+}
+
+.captured-list {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
+
+.advantage {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-left: 4px;
+}
