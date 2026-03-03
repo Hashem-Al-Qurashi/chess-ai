@@ -8,6 +8,7 @@ import PromotionModal from './components/PromotionModal'
 import CapturedPieces from './components/CapturedPieces'
 import GameOverModal from './components/GameOverModal'
 import ChessTimer from './components/ChessTimer'
+import EvalBar from './components/EvalBar'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
@@ -309,15 +310,18 @@ function App() {
           />
           <ChessTimer timerState={timerState} flipped={boardFlipped} />
           <CapturedPieces game={displayGame} />
-          <Board
-            game={displayGame}
-            selectedSquare={isViewingLatest ? selectedSquare : null}
-            legalMoves={isViewingLatest ? legalMoves : []}
-            lastMove={lastMove}
-            flipped={boardFlipped}
-            onSquareClick={handleSquareClick}
-            onDrop={handleDrop}
-          />
+          <div className="board-with-eval">
+            <EvalBar game={displayGame} />
+            <Board
+              game={displayGame}
+              selectedSquare={isViewingLatest ? selectedSquare : null}
+              legalMoves={isViewingLatest ? legalMoves : []}
+              lastMove={lastMove}
+              flipped={boardFlipped}
+              onSquareClick={handleSquareClick}
+              onDrop={handleDrop}
+            />
+          </div>
         </div>
         <div className="side-panel">
           <GameControls
