@@ -4,6 +4,7 @@ import Board from './components/Board'
 import MoveHistory from './components/MoveHistory'
 import GameControls from './components/GameControls'
 import GameStatus from './components/GameStatus'
+import PromotionModal from './components/PromotionModal'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import './App.css'
@@ -22,6 +23,7 @@ function App() {
   const [isThinking, setIsThinking] = useState(false)
   const [lastMove, setLastMove] = useState<{ from: string; to: string } | null>(null)
   const [boardFlipped, setBoardFlipped] = useState(false)
+  const [pendingPromotion, setPendingPromotion] = useState<{ from: string; to: string; color: 'w' | 'b' } | null>(null)
   const [soundEnabled, setSoundEnabled] = useState(true)
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
@@ -85,7 +87,10 @@ function App() {
 
       if (move) {
         if (move.piece === 'p' && (move.to[1] === '8' || move.to[1] === '1')) {
-          move.promotion = 'q'
+          setPendingPromotion({ from: move.from, to: move.to, color: game.turn() })
+          setSelectedSquare(null)
+          setLegalMoves([])
+          return
         }
 
         const newGame = new Chess(game.fen())
@@ -158,6 +163,22 @@ function App() {
     setLastMove(null)
   }, [game, gameMode])
 
+  const handlePromotion = useCallback((piece: 'q' | 'r' | 'b' | 'n') => {
+    if (!pendingPromotion) return
+    const newGame = new Chess(game.fen())
+    const result = newGame.move({ from: pendingPromotion.from, to: pendingPromotion.to, promotion: piece })
+    if (result) {
+      setGame(newGame)
+      setMoveHistory(prev => [...prev, result.san])
+      setLastMove({ from: pendingPromotion.from, to: pendingPromotion.to })
+      playMoveSound(newGame, !!result.captured)
+      if (gameMode === 'ai' && !newGame.isGameOver()) {
+        makeAIMove(newGame)
+      }
+    }
+    setPendingPromotion(null)
+  }, [pendingPromotion, game, playMoveSound, gameMode, makeAIMove])
+
   const handleFlipBoard = useCallback(() => {
     setBoardFlipped(prev => !prev)
   }, [])
@@ -201,6 +222,9 @@ function App() {
           <MoveHistory moves={moveHistory} />
         </div>
       </div>
+      {pendingPromotion && (
+        <PromotionModal color={pendingPromotion.color} onSelect={handlePromotion} />
+      )}
     </div>
   )
 }
