@@ -16,6 +16,7 @@ import FenLoader from './components/FenLoader'
 import PlayerLabel from './components/PlayerLabel'
 import DailyTip from './components/DailyTip'
 import TacticOfDay from './components/TacticOfDay'
+import GamesPlayed from './components/GamesPlayed'
 import { ecoOpenings } from './data/eco'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
@@ -47,6 +48,7 @@ function App() {
   const [showGameOver, setShowGameOver] = useState(false)
   const [resigned, setResigned] = useState<'w' | 'b' | null>(null)
   const [stats, setStats] = usePersistedState('chess-stats', { wins: 0, losses: 0, draws: 0 })
+  const [, setGamesPlayed] = usePersistedState('chess-games-played', 0)
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
   const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
@@ -330,6 +332,7 @@ function App() {
     } else {
       setStats(prev => ({ ...prev, wins: prev.wins + 1 }))
     }
+    setGamesPlayed(prev => prev + 1)
     setTimeout(() => setShowGameOver(true), 300)
   }, [game, resigned, gameMode, playerColor, pauseTimer, gameClock])
 
@@ -440,6 +443,8 @@ function App() {
         }
       }
 
+      setGamesPlayed(prev => prev + 1)
+
       return () => clearTimeout(timeout)
     }
   }, [game, timerState.isExpired, gameMode, playerColor])
@@ -538,6 +543,7 @@ function App() {
           <ShortcutsHelp />
           <DailyTip />
           <TacticOfDay />
+          <GamesPlayed />
         </div>
       </div>
       {pendingPromotion && (
