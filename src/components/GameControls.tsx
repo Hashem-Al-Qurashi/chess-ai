@@ -9,6 +9,7 @@ interface GameControlsProps {
   soundEnabled: boolean
   timeControl: TimeControl
   pgn: string
+  gameInProgress: boolean
   onNewGame: (mode: GameMode, difficulty?: Difficulty, color?: 'w' | 'b') => void
   onUndo: () => void
   onFlipBoard: () => void
@@ -41,6 +42,7 @@ export default function GameControls({
   soundEnabled,
   timeControl,
   pgn,
+  gameInProgress,
   onNewGame,
   onUndo,
   onFlipBoard,
@@ -50,6 +52,11 @@ export default function GameControls({
 }: GameControlsProps) {
   const [copied, setCopied] = useState(false)
   const [boardTheme, setBoardTheme] = useState<BoardTheme>('walnut')
+
+  const confirmNewGame = (mode: GameMode, diff?: Difficulty, color?: 'w' | 'b') => {
+    if (gameInProgress && !confirm('Start a new game? Current game will be lost.')) return
+    onNewGame(mode, diff, color)
+  }
 
   const handleBoardTheme = (theme: BoardTheme) => {
     setBoardTheme(theme)
@@ -83,13 +90,13 @@ export default function GameControls({
         <div className="button-group">
           <button
             className={`btn ${gameMode === 'local' ? 'active' : ''}`}
-            onClick={() => onNewGame('local')}
+            onClick={() => confirmNewGame('local')}
           >
             2 Players
           </button>
           <button
             className={`btn ${gameMode === 'ai' ? 'active' : ''}`}
-            onClick={() => onNewGame('ai', difficulty, 'w')}
+            onClick={() => confirmNewGame('ai', difficulty, 'w')}
           >
             vs AI
           </button>
@@ -105,7 +112,7 @@ export default function GameControls({
                 <button
                   key={d}
                   className={`btn btn-sm ${difficulty === d ? 'active' : ''}`}
-                  onClick={() => onNewGame('ai', d)}
+                  onClick={() => confirmNewGame('ai', d)}
                 >
                   {d.charAt(0).toUpperCase() + d.slice(1)}
                 </button>
@@ -116,10 +123,10 @@ export default function GameControls({
           <div className="control-section">
             <h4>Play as</h4>
             <div className="button-group">
-              <button className="btn btn-sm" onClick={() => onNewGame('ai', difficulty, 'w')}>
+              <button className="btn btn-sm" onClick={() => confirmNewGame('ai', difficulty, 'w')}>
                 White
               </button>
-              <button className="btn btn-sm" onClick={() => onNewGame('ai', difficulty, 'b')}>
+              <button className="btn btn-sm" onClick={() => confirmNewGame('ai', difficulty, 'b')}>
                 Black
               </button>
             </div>
