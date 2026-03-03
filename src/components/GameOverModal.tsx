@@ -7,12 +7,31 @@ interface GameOverModalProps {
   gameMode: GameMode
   playerColor: 'w' | 'b'
   timeExpired: 'w' | 'b' | null
+  resigned: 'w' | 'b' | null
   onPlayAgain: () => void
   onClose: () => void
 }
 
-export default function GameOverModal({ game, gameMode, playerColor, timeExpired, onPlayAgain, onClose }: GameOverModalProps) {
+export default function GameOverModal({ game, gameMode, playerColor, timeExpired, resigned, onPlayAgain, onClose }: GameOverModalProps) {
   const getResult = (): { title: string; subtitle: string; emoji: string } => {
+    if (resigned) {
+      const loser = resigned === 'w' ? 'White' : 'Black'
+      const winner = resigned === 'w' ? 'Black' : 'White'
+      if (gameMode === 'ai') {
+        const youResigned = resigned === playerColor
+        return {
+          title: youResigned ? 'You Resigned' : 'You Win!',
+          subtitle: `${loser} resigned. ${winner} wins!`,
+          emoji: youResigned ? '🏳️' : '🏆',
+        }
+      }
+      return {
+        title: `${winner} Wins!`,
+        subtitle: `${loser} resigned`,
+        emoji: '🏳️',
+      }
+    }
+
     if (timeExpired) {
       const loser = timeExpired === 'w' ? 'White' : 'Black'
       const winner = timeExpired === 'w' ? 'Black' : 'White'

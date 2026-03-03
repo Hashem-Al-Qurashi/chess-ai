@@ -73,3 +73,12 @@
 .btn.full-width {
   width: 100%;
 }
+
+.btn.btn-danger {
+  background: #8b2232;
+  color: #e0e0e0;
+}
+
+.btn.btn-danger:hover {
+  background: #a52a3a;
+}
