@@ -178,6 +178,7 @@ function App() {
         return
       }
 
+      sound.playError()
       setSelectedSquare(null)
       setLegalMoves([])
       return
@@ -262,11 +263,12 @@ function App() {
       setBoardFlipped(color === 'b')
     }
     resetTimer()
+    sound.playStart()
 
     if (mode === 'ai' && color === 'b') {
       makeAIMove(newGame)
     }
-  }, [makeAIMove, resetTimer])
+  }, [makeAIMove, resetTimer, sound])
 
   const handleUndo = useCallback(() => {
     const undoCount = gameMode === 'ai' ? 2 : 1
