@@ -26,6 +26,7 @@ export default function Board({
   onDrop,
 }: BoardProps) {
   const [dragFrom, setDragFrom] = useState<string | null>(null)
+  const [highlighted, setHighlighted] = useState<Set<string>>(new Set())
 
   const displayRanks = flipped ? [...ranks].reverse() : ranks
   const displayFiles = flipped ? [...files].reverse() : files
@@ -66,6 +67,24 @@ export default function Board({
     setDragFrom(null)
   }
 
+  const handleContextMenu = (e: React.MouseEvent, square: string) => {
+    e.preventDefault()
+    setHighlighted(prev => {
+      const next = new Set(prev)
+      if (next.has(square)) {
+        next.delete(square)
+      } else {
+        next.add(square)
+      }
+      return next
+    })
+  }
+
+  const handleSquareClick = (square: string) => {
+    if (highlighted.size > 0) setHighlighted(new Set())
+    onSquareClick(square)
+  }
+
   return (
     <div className="board">
       {displayRanks.map((rank, rowIndex) =>
@@ -78,6 +97,7 @@ export default function Board({
           const isLastMove = lastMove && (square === lastMove.from || square === lastMove.to)
           const isKingInCheck = square === kingSquare
           const isDragSource = square === dragFrom
+          const isHighlighted = highlighted.has(square)
 
           const classNames = [
             'square',
@@ -86,13 +106,15 @@ export default function Board({
             isLastMove ? 'last-move' : '',
             isKingInCheck ? 'in-check' : '',
             isDragSource ? 'drag-source' : '',
+            isHighlighted ? 'highlighted' : '',
           ].filter(Boolean).join(' ')
 
           return (
             <div
               key={square}
               className={classNames}
-              onClick={() => onSquareClick(square)}
+              onClick={() => handleSquareClick(square)}
+              onContextMenu={(e) => handleContextMenu(e, square)}
               onDragOver={handleDragOver}
               onDrop={(e) => handleDrop_(e, square)}
             >
