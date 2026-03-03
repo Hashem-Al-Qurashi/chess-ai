@@ -17,6 +17,16 @@ interface GameControlsProps {
   canUndo: boolean
 }
 
+export type BoardTheme = 'classic' | 'green' | 'blue' | 'purple' | 'walnut'
+
+const boardThemes: { value: BoardTheme; label: string }[] = [
+  { value: 'walnut', label: 'Walnut' },
+  { value: 'classic', label: 'Classic' },
+  { value: 'green', label: 'Green' },
+  { value: 'blue', label: 'Blue' },
+  { value: 'purple', label: 'Purple' },
+]
+
 const timeControls: { value: TimeControl; label: string }[] = [
   { value: 'none', label: 'No Timer' },
   { value: 'bullet', label: '1 min' },
@@ -39,6 +49,12 @@ export default function GameControls({
   canUndo,
 }: GameControlsProps) {
   const [copied, setCopied] = useState(false)
+  const [boardTheme, setBoardTheme] = useState<BoardTheme>('walnut')
+
+  const handleBoardTheme = (theme: BoardTheme) => {
+    setBoardTheme(theme)
+    document.documentElement.setAttribute('data-board', theme)
+  }
 
   const handleCopyPGN = async () => {
     try {
@@ -110,6 +126,21 @@ export default function GameControls({
           </div>
         </>
       )}
+
+      <div className="control-section">
+        <h4>Board Theme</h4>
+        <div className="button-group">
+          {boardThemes.map((bt) => (
+            <button
+              key={bt.value}
+              className={`btn btn-sm ${boardTheme === bt.value ? 'active' : ''}`}
+              onClick={() => handleBoardTheme(bt.value)}
+            >
+              {bt.label}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="control-section">
         <h4>Time Control</h4>

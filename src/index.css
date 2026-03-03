@@ -36,6 +36,32 @@
   --square-dark: #b58863;
 }
 
+/* Board themes */
+[data-board="classic"] {
+  --square-light: #f0d9b5;
+  --square-dark: #b58863;
+}
+
+[data-board="green"] {
+  --square-light: #eeeed2;
+  --square-dark: #769656;
+}
+
+[data-board="blue"] {
+  --square-light: #dee3e6;
+  --square-dark: #8ca2ad;
+}
+
+[data-board="purple"] {
+  --square-light: #e8d5f5;
+  --square-dark: #8b6fad;
+}
+
+[data-board="walnut"] {
+  --square-light: #e8dcc8;
+  --square-dark: #7b6b4f;
+}
+
 body {
   margin: 0;
   min-width: 320px;
