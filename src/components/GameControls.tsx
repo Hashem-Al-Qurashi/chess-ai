@@ -1,25 +1,38 @@
 import { type GameMode, type Difficulty } from '../App'
+import { type TimeControl } from '../hooks/useChessTimer'
 import './GameControls.css'
 
 interface GameControlsProps {
   gameMode: GameMode
   difficulty: Difficulty
   soundEnabled: boolean
+  timeControl: TimeControl
   onNewGame: (mode: GameMode, difficulty?: Difficulty, color?: 'w' | 'b') => void
   onUndo: () => void
   onFlipBoard: () => void
   onToggleSound: () => void
+  onTimeControl: (tc: TimeControl) => void
   canUndo: boolean
 }
+
+const timeControls: { value: TimeControl; label: string }[] = [
+  { value: 'none', label: 'No Timer' },
+  { value: 'bullet', label: '1 min' },
+  { value: 'blitz', label: '3 min' },
+  { value: 'rapid', label: '10 min' },
+  { value: 'classical', label: '30 min' },
+]
 
 export default function GameControls({
   gameMode,
   difficulty,
   soundEnabled,
+  timeControl,
   onNewGame,
   onUndo,
   onFlipBoard,
   onToggleSound,
+  onTimeControl,
   canUndo,
 }: GameControlsProps) {
   return (
@@ -74,6 +87,21 @@ export default function GameControls({
           </div>
         </>
       )}
+
+      <div className="control-section">
+        <h4>Time Control</h4>
+        <div className="button-group">
+          {timeControls.map((tc) => (
+            <button
+              key={tc.value}
+              className={`btn btn-sm ${timeControl === tc.value ? 'active' : ''}`}
+              onClick={() => onTimeControl(tc.value)}
+            >
+              {tc.label}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="control-section">
         <div className="button-group">

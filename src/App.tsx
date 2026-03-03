@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { Chess } from 'chess.js'
 import Board from './components/Board'
 import MoveHistory from './components/MoveHistory'
@@ -6,8 +6,10 @@ import GameControls from './components/GameControls'
 import GameStatus from './components/GameStatus'
 import PromotionModal from './components/PromotionModal'
 import CapturedPieces from './components/CapturedPieces'
+import ChessTimer from './components/ChessTimer'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
+import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
 import './App.css'
 
 export type GameMode = 'local' | 'ai'
@@ -28,10 +30,12 @@ function App() {
   const [soundEnabled, setSoundEnabled] = useState(true)
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
+  const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
 
   const playMoveSound = useCallback((game: Chess, captured: boolean) => {
     if (game.isCheckmate() || game.isDraw()) {
       sound.playGameOver()
+      pauseTimer()
     } else if (game.inCheck()) {
       sound.playCheck()
     } else if (captured) {
@@ -39,7 +43,7 @@ function App() {
     } else {
       sound.playMove()
     }
-  }, [sound])
+  }, [sound, pauseTimer])
 
   const makeAIMove = useCallback((currentGame: Chess) => {
     if (currentGame.isGameOver()) return
@@ -74,12 +78,16 @@ function App() {
       setMoveHistory(prev => [...prev, selectedMove.san])
       setLastMove({ from: selectedMove.from, to: selectedMove.to })
       playMoveSound(currentGame, captured)
+      if (!currentGame.isGameOver()) {
+        switchTurn(currentGame.turn())
+      }
       setIsThinking(false)
     }, 500)
-  }, [difficulty, playMoveSound])
+  }, [difficulty, playMoveSound, switchTurn])
 
   const handleSquareClick = useCallback((square: string) => {
     if (isThinking) return
+    if (timerState.isExpired) return
     if (gameMode === 'ai' && game.turn() !== playerColor) return
 
     if (selectedSquare) {
@@ -102,6 +110,9 @@ function App() {
           setMoveHistory(prev => [...prev, result.san])
           setLastMove({ from: move.from, to: move.to })
           playMoveSound(newGame, !!move.captured)
+          if (!newGame.isGameOver()) {
+            switchTurn(newGame.turn())
+          }
           setSelectedSquare(null)
           setLegalMoves([])
 
@@ -131,7 +142,7 @@ function App() {
       const moves = game.moves({ square: square as any, verbose: true })
       setLegalMoves(moves.map(m => m.to))
     }
-  }, [game, selectedSquare, isThinking, gameMode, playerColor, makeAIMove])
+  }, [game, selectedSquare, isThinking, gameMode, playerColor, makeAIMove, switchTurn, timerState.isExpired])
 
   const handleNewGame = useCallback((mode: GameMode, diff?: Difficulty, color?: 'w' | 'b') => {
     const newGame = new Chess()
@@ -147,11 +158,12 @@ function App() {
       setPlayerColor(color)
       setBoardFlipped(color === 'b')
     }
+    resetTimer()
 
     if (mode === 'ai' && color === 'b') {
       makeAIMove(newGame)
     }
-  }, [makeAIMove])
+  }, [makeAIMove, resetTimer])
 
   const handleUndo = useCallback(() => {
     const newGame = new Chess(game.fen())
@@ -173,16 +185,30 @@ function App() {
       setMoveHistory(prev => [...prev, result.san])
       setLastMove({ from: pendingPromotion.from, to: pendingPromotion.to })
       playMoveSound(newGame, !!result.captured)
+      if (!newGame.isGameOver()) {
+        switchTurn(newGame.turn())
+      }
       if (gameMode === 'ai' && !newGame.isGameOver()) {
         makeAIMove(newGame)
       }
     }
     setPendingPromotion(null)
-  }, [pendingPromotion, game, playMoveSound, gameMode, makeAIMove])
+  }, [pendingPromotion, game, playMoveSound, gameMode, makeAIMove, switchTurn])
+
+  const handleTimeControl = useCallback((tc: TimeControl) => {
+    startTimer(tc)
+  }, [startTimer])
 
   const handleFlipBoard = useCallback(() => {
     setBoardFlipped(prev => !prev)
   }, [])
+
+  // Start timer on first move
+  useEffect(() => {
+    if (moveHistory.length === 1 && timerState.timeControl !== 'none' && timerState.activeColor === null && !timerState.isExpired) {
+      switchTurn(game.turn())
+    }
+  }, [moveHistory.length, timerState.timeControl, timerState.activeColor, timerState.isExpired, switchTurn, game])
 
   return (
     <div className="app">
@@ -200,6 +226,7 @@ function App() {
             gameMode={gameMode}
             playerColor={playerColor}
           />
+          <ChessTimer timerState={timerState} flipped={boardFlipped} />
           <CapturedPieces game={game} />
           <Board
             game={game}
@@ -215,10 +242,12 @@ function App() {
             gameMode={gameMode}
             difficulty={difficulty}
             soundEnabled={soundEnabled}
+            timeControl={timerState.timeControl}
             onNewGame={handleNewGame}
             onUndo={handleUndo}
             onFlipBoard={handleFlipBoard}
             onToggleSound={() => { sound.toggleSound(); setSoundEnabled(prev => !prev) }}
+            onTimeControl={handleTimeControl}
             canUndo={moveHistory.length > 0 && !isThinking}
           />
           <MoveHistory moves={moveHistory} />
