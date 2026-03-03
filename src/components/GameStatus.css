@@ -52,11 +52,29 @@
   font-size: 0.85rem;
 }
 
+.turn-dot {
+  margin-right: 6px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
 .status-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 0;
   font-size: 0.7rem;
   opacity: 0.6;
   margin-top: 4px;
   font-weight: 400;
+}
+
+.status-divider {
+  margin: 0 6px;
+  opacity: 0.5;
+}
+
+.last-move-san {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-weight: 600;
+  opacity: 0.9;
 }

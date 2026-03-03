@@ -53,9 +53,12 @@ export default function GameStatus({ game, isThinking, gameMode, playerColor, mo
         ? 'thinking'
         : ''
 
+  const turnIndicator = game.turn() === 'w' ? '\u25CB' : '\u25CF'
+
   return (
     <div className={`game-status ${statusClass}`}>
       <div className="status-main">
+        {!game.isGameOver() && <span className="turn-dot">{turnIndicator}</span>}
         {getStatus()}
         {openingName && !game.isGameOver() && (
           <span className="opening-name"> — {openingName}</span>
@@ -64,7 +67,14 @@ export default function GameStatus({ game, isThinking, gameMode, playerColor, mo
       {moveHistory.length > 0 && (
         <div className="status-meta">
           <span>Move {moveNumber}</span>
+          <span className="status-divider">|</span>
           <span>{formatElapsed(elapsed)}</span>
+          {moveHistory.length > 0 && (
+            <>
+              <span className="status-divider">|</span>
+              <span className="last-move-san">{moveHistory[moveHistory.length - 1]}</span>
+            </>
+          )}
         </div>
       )}
     </div>
