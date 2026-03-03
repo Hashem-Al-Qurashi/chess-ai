@@ -17,6 +17,7 @@ import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import { useGameClock } from './hooks/useGameClock'
+import { usePersistedState } from './hooks/usePersistedState'
 import './App.css'
 
 export type GameMode = 'local' | 'ai'
@@ -30,14 +31,14 @@ function App() {
   const [fenHistory, setFenHistory] = useState<string[]>([new Chess().fen()])
   const [viewIndex, setViewIndex] = useState(-1)
   const [gameMode, setGameMode] = useState<GameMode>('local')
-  const [difficulty, setDifficulty] = useState<Difficulty>('medium')
+  const [difficulty, setDifficulty] = usePersistedState<Difficulty>('chess-difficulty', 'medium')
   const [playerColor, setPlayerColor] = useState<'w' | 'b'>('w')
   const [isThinking, setIsThinking] = useState(false)
   const [lastMove, setLastMove] = useState<{ from: string; to: string } | null>(null)
   const [boardFlipped, setBoardFlipped] = useState(false)
   const [pendingPromotion, setPendingPromotion] = useState<{ from: string; to: string; color: 'w' | 'b' } | null>(null)
-  const [soundEnabled, setSoundEnabled] = useState(true)
-  const [autoQueen, setAutoQueen] = useState(false)
+  const [soundEnabled, setSoundEnabled] = usePersistedState('chess-sound', true)
+  const [autoQueen, setAutoQueen] = usePersistedState('chess-auto-queen', false)
   const [showGameOver, setShowGameOver] = useState(false)
   const [resigned, setResigned] = useState<'w' | 'b' | null>(null)
   const [stats, setStats] = useState({ wins: 0, losses: 0, draws: 0 })
