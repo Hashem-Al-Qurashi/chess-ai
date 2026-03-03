@@ -22,6 +22,20 @@ function formatElapsed(ms: number): string {
 export default function GameStatus({ game, isThinking, gameMode, playerColor, moveHistory, elapsed }: GameStatusProps) {
   const openingName = identifyOpening(moveHistory)
   const moveNumber = Math.floor(moveHistory.length / 2) + 1
+
+  const pieceCount = (() => {
+    let w = 0, b = 0
+    const board = game.board()
+    for (const row of board) {
+      for (const sq of row) {
+        if (sq) {
+          if (sq.color === 'w') w++
+          else b++
+        }
+      }
+    }
+    return { w, b }
+  })()
   const getStatus = (): string => {
     if (game.isCheckmate()) {
       const winner = game.turn() === 'w' ? 'Black' : 'White'
@@ -69,6 +83,8 @@ export default function GameStatus({ game, isThinking, gameMode, playerColor, mo
           <span>Move {moveNumber}</span>
           <span className="status-divider">|</span>
           <span>{formatElapsed(elapsed)}</span>
+          <span className="status-divider">|</span>
+          <span className="piece-count">{pieceCount.w}v{pieceCount.b}</span>
           {moveHistory.length > 0 && (
             <>
               <span className="status-divider">|</span>
