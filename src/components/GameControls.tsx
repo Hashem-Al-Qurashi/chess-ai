@@ -87,6 +87,17 @@ export default function GameControls({
     }
   }
 
+  const handleDownloadPGN = () => {
+    const date = new Date().toISOString().split('T')[0]
+    const blob = new Blob([pgn], { type: 'application/x-chess-pgn' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `chess-game-${date}.pgn`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   return (
     <div className="game-controls">
       <h3>Game Controls</h3>
@@ -194,8 +205,11 @@ export default function GameControls({
 
       <div className="control-section">
         <div className="button-group">
-          <button className="btn btn-secondary full-width" onClick={handleCopyPGN} disabled={!pgn}>
+          <button className="btn btn-secondary" onClick={handleCopyPGN} disabled={!pgn}>
             {copied ? 'Copied!' : 'Copy PGN'}
+          </button>
+          <button className="btn btn-secondary" onClick={handleDownloadPGN} disabled={!pgn}>
+            Download PGN
           </button>
           <button className="btn btn-danger" onClick={onResign} disabled={!gameInProgress}>
             Resign
