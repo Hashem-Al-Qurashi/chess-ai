@@ -13,6 +13,7 @@ import GameStats from './components/GameStats'
 import ShortcutsHelp from './components/ShortcutsHelp'
 import OpeningName from './components/OpeningName'
 import FenLoader from './components/FenLoader'
+import PlayerLabel from './components/PlayerLabel'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
@@ -421,6 +422,12 @@ function App() {
           <OpeningName pgn={game.pgn()} />
           <ChessTimer timerState={timerState} flipped={boardFlipped} />
           <CapturedPieces game={displayGame} />
+          <PlayerLabel
+            color={boardFlipped ? 'w' : 'b'}
+            isActive={game.turn() === (boardFlipped ? 'w' : 'b')}
+            label={gameMode === 'ai' && (boardFlipped ? 'w' : 'b') !== playerColor ? 'Computer' : (boardFlipped ? 'White' : 'Black')}
+            isAI={gameMode === 'ai' && (boardFlipped ? 'w' : 'b') !== playerColor}
+          />
           <div className="board-with-eval">
             <EvalBar game={displayGame} />
             <Board
@@ -434,6 +441,12 @@ function App() {
               onDrop={handleDrop}
             />
           </div>
+          <PlayerLabel
+            color={boardFlipped ? 'b' : 'w'}
+            isActive={game.turn() === (boardFlipped ? 'b' : 'w')}
+            label={gameMode === 'ai' && (boardFlipped ? 'b' : 'w') !== playerColor ? 'Computer' : (boardFlipped ? 'Black' : 'White')}
+            isAI={gameMode === 'ai' && (boardFlipped ? 'b' : 'w') !== playerColor}
+          />
         </div>
         <div className="side-panel">
           <GameControls
