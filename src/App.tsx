@@ -14,6 +14,7 @@ import ShortcutsHelp from './components/ShortcutsHelp'
 import OpeningName from './components/OpeningName'
 import FenLoader from './components/FenLoader'
 import PlayerLabel from './components/PlayerLabel'
+import DailyTip from './components/DailyTip'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
@@ -494,6 +495,7 @@ function App() {
           <FenLoader currentFen={game.fen()} onLoadFen={handleLoadFen} onLoadPgn={handleLoadPgn} />
           <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} onReset={() => setStats({ wins: 0, losses: 0, draws: 0 })} />
           <ShortcutsHelp />
+          <DailyTip />
         </div>
       </div>
       {pendingPromotion && (
