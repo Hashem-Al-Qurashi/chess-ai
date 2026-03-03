@@ -10,7 +10,7 @@
 
 .promotion-modal {
   background: var(--bg-secondary);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 24px;
   text-align: center;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
