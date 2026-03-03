@@ -20,9 +20,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
 }
 
 [data-theme="light"] {
+  color-scheme: light;
   --bg-primary: #f0f0f0;
   --bg-secondary: #ffffff;
   --bg-button: #4a90d9;
@@ -62,13 +64,16 @@
   --square-dark: #7b6b4f;
 }
 
+* {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   min-height: 100dvh;
   background-color: var(--bg-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
   overscroll-behavior: none;
