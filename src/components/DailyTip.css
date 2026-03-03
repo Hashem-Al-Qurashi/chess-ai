@@ -1,7 +1,7 @@
 .daily-tip {
   padding: 12px 16px;
   background: var(--bg-secondary);
-  border-radius: 8px;
+  border-radius: 10px;
   border-left: 3px solid var(--accent);
 }
 
