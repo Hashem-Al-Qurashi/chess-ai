@@ -60,12 +60,16 @@ export default function CapturedPieces({ game }: CapturedPiecesProps) {
     <div className="captured-pieces">
       <div className="captured-row">
         <span className="captured-label">B</span>
-        <span className="captured-list">{captured.b.join(' ')}</span>
+        <span className="captured-list">
+          {captured.b.length > 0 ? captured.b.join('') : '—'}
+        </span>
         {advantage < 0 && <span className="advantage">+{Math.abs(advantage)}</span>}
       </div>
       <div className="captured-row">
         <span className="captured-label">W</span>
-        <span className="captured-list">{captured.w.join(' ')}</span>
+        <span className="captured-list">
+          {captured.w.length > 0 ? captured.w.join('') : '—'}
+        </span>
         {advantage > 0 && <span className="advantage">+{advantage}</span>}
       </div>
     </div>
