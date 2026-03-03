@@ -18,6 +18,13 @@
   cursor: pointer;
   transition: background-color 0.15s ease;
   user-select: none;
+  outline: none;
+}
+
+.square:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  z-index: 1;
 }
 
 .square.light {
@@ -111,7 +118,7 @@
   align-items: center;
   justify-content: center;
   cursor: grab;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .piece-wrapper:hover {
