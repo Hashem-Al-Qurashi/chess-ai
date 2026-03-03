@@ -1,7 +1,7 @@
 .game-status {
   text-align: center;
   padding: 12px 18px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 0.95rem;
   background: var(--bg-secondary);
