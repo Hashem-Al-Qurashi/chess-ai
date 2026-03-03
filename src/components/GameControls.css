@@ -74,6 +74,13 @@
   width: 100%;
 }
 
+.difficulty-desc {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-style: italic;
+}
+
 .btn.btn-danger {
   background: #8b2232;
   color: #e0e0e0;

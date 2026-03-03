@@ -124,6 +124,11 @@ export default function GameControls({
                 </button>
               ))}
             </div>
+            <p className="difficulty-desc">
+              {difficulty === 'easy' && 'Random legal moves'}
+              {difficulty === 'medium' && 'Prefers captures & checks'}
+              {difficulty === 'hard' && 'Minimax depth 3 with evaluation'}
+            </p>
           </div>
 
           <div className="control-section">
