@@ -18,7 +18,7 @@
 .game-status.game-over {
   background: linear-gradient(135deg, #e94560, #0f3460);
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 .game-status.thinking {
