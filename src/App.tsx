@@ -9,6 +9,7 @@ import CapturedPieces from './components/CapturedPieces'
 import GameOverModal from './components/GameOverModal'
 import ChessTimer from './components/ChessTimer'
 import EvalBar from './components/EvalBar'
+import GameStats from './components/GameStats'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
@@ -34,6 +35,7 @@ function App() {
   const [pendingPromotion, setPendingPromotion] = useState<{ from: string; to: string; color: 'w' | 'b' } | null>(null)
   const [soundEnabled, setSoundEnabled] = useState(true)
   const [showGameOver, setShowGameOver] = useState(false)
+  const [stats, setStats] = useState({ wins: 0, losses: 0, draws: 0 })
   const sound = useSound()
   const { theme, toggleTheme } = useTheme()
   const { timerState, startTimer, switchTurn, pauseTimer, resetTimer } = useChessTimer()
@@ -274,13 +276,34 @@ function App() {
     }
   }, [moveHistory.length, timerState.timeControl, timerState.activeColor, timerState.isExpired, switchTurn, game])
 
-  // Show game over modal
+  // Show game over modal and record stats
   useEffect(() => {
     if (game.isGameOver() || timerState.isExpired) {
       const timeout = setTimeout(() => setShowGameOver(true), 600)
+
+      // Record result
+      if (game.isDraw()) {
+        setStats(prev => ({ ...prev, draws: prev.draws + 1 }))
+      } else if (game.isCheckmate()) {
+        const whiteWins = game.turn() === 'b'
+        if (gameMode === 'ai') {
+          const youWin = (whiteWins && playerColor === 'w') || (!whiteWins && playerColor === 'b')
+          setStats(prev => youWin ? { ...prev, wins: prev.wins + 1 } : { ...prev, losses: prev.losses + 1 })
+        } else {
+          setStats(prev => ({ ...prev, wins: prev.wins + 1 }))
+        }
+      } else if (timerState.isExpired) {
+        if (gameMode === 'ai') {
+          const youWin = timerState.isExpired !== playerColor
+          setStats(prev => youWin ? { ...prev, wins: prev.wins + 1 } : { ...prev, losses: prev.losses + 1 })
+        } else {
+          setStats(prev => ({ ...prev, wins: prev.wins + 1 }))
+        }
+      }
+
       return () => clearTimeout(timeout)
     }
-  }, [game, timerState.isExpired])
+  }, [game, timerState.isExpired, gameMode, playerColor])
 
   useKeyboardShortcuts({
     onPrevMove: () => handleGoToMove(viewIndex - 1),
@@ -338,6 +361,7 @@ function App() {
             canUndo={moveHistory.length > 0 && !isThinking}
           />
           <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
+          <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} />
         </div>
       </div>
       {pendingPromotion && (
