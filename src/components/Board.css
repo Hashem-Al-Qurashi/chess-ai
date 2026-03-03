@@ -127,6 +127,16 @@
   opacity: 0.5;
 }
 
+.board.ai-thinking {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(233, 69, 96, 0.2);
+  animation: board-think 2s ease-in-out infinite;
+}
+
+@keyframes board-think {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(233, 69, 96, 0.15); }
+  50% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(233, 69, 96, 0.35); }
+}
+
 @media (max-width: 480px) {
   .board {
     width: min(100vw - 16px, 480px);

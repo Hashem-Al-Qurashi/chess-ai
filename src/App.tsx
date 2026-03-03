@@ -427,6 +427,7 @@ function App() {
               legalMoves={isViewingLatest ? legalMoves : []}
               lastMove={lastMove}
               flipped={boardFlipped}
+              isThinking={isThinking}
               onSquareClick={handleSquareClick}
               onDrop={handleDrop}
             />
