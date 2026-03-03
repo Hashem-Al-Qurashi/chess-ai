@@ -294,6 +294,7 @@ function App() {
             isThinking={isThinking}
             gameMode={gameMode}
             playerColor={playerColor}
+            moveHistory={moveHistory}
           />
           <ChessTimer timerState={timerState} flipped={boardFlipped} />
           <CapturedPieces game={displayGame} />
