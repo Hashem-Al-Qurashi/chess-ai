@@ -5,6 +5,7 @@ import MoveHistory from './components/MoveHistory'
 import GameControls from './components/GameControls'
 import GameStatus from './components/GameStatus'
 import PromotionModal from './components/PromotionModal'
+import CapturedPieces from './components/CapturedPieces'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import './App.css'
@@ -199,6 +200,7 @@ function App() {
             gameMode={gameMode}
             playerColor={playerColor}
           />
+          <CapturedPieces game={game} />
           <Board
             game={game}
             selectedSquare={selectedSquare}
