@@ -2,7 +2,7 @@
 
 A modern web-based chess game with an AI opponent powered by the minimax algorithm with alpha-beta pruning.
 
-**[Live Demo](https://chess-ai-hashem.vercel.app)**
+**[Live Demo](https://hashem-al-qurashi.github.io/chess-ai/)**
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react) ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript) ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=flat-square&logo=vite) ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
 
