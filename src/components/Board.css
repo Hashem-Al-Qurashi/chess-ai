@@ -99,12 +99,33 @@
   align-items: center;
   justify-content: center;
   cursor: grab;
+  transition: transform 0.15s ease;
+}
+
+.piece-wrapper:hover {
+  transform: scale(1.08);
 }
 
 .piece-wrapper:active {
   cursor: grabbing;
+  transform: scale(1.02);
 }
 
 .square.drag-source {
   opacity: 0.5;
+}
+
+@keyframes piece-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.piece-wrapper {
+  animation: piece-appear 0.15s ease-out;
 }
