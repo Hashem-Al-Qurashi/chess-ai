@@ -1,0 +1,36 @@
+.fen-loader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fen-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--bg-button);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.fen-input:focus {
+  border-color: var(--accent);
+}
+
+.fen-error {
+  color: #e94560;
+  font-size: 0.75rem;
+}
+
+.fen-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.fen-toggle {
+  font-size: 0.8rem;
+}

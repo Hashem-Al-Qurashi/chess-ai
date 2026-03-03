@@ -10,6 +10,7 @@ import GameOverModal from './components/GameOverModal'
 import ChessTimer from './components/ChessTimer'
 import EvalBar from './components/EvalBar'
 import GameStats from './components/GameStats'
+import FenLoader from './components/FenLoader'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
@@ -272,6 +273,20 @@ function App() {
     setBoardFlipped(prev => !prev)
   }, [])
 
+  const handleLoadFen = useCallback((fen: string) => {
+    const newGame = new Chess(fen)
+    setGame(newGame)
+    setSelectedSquare(null)
+    setLegalMoves([])
+    setMoveHistory([])
+    setFenHistory([fen])
+    setViewIndex(-1)
+    setLastMove(null)
+    setShowGameOver(false)
+    gameClock.reset()
+    resetTimer()
+  }, [gameClock, resetTimer])
+
   // Start timer on first move
   useEffect(() => {
     if (moveHistory.length === 1 && timerState.timeControl !== 'none' && timerState.activeColor === null && !timerState.isExpired) {
@@ -375,6 +390,7 @@ function App() {
             canUndo={moveHistory.length > 0 && !isThinking}
           />
           <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
+          <FenLoader currentFen={game.fen()} onLoadFen={handleLoadFen} />
           <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} />
         </div>
       </div>
