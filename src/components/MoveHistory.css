@@ -1,5 +1,5 @@
 .move-history {
-  background: #16213e;
+  background: var(--bg-secondary);
   border-radius: 8px;
   padding: 16px;
   flex: 1;

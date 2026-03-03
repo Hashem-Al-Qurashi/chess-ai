@@ -1,19 +1,47 @@
-:root {
+:root,
+[data-theme="dark"] {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-button: #0f3460;
+  --bg-button-hover: #1a4a80;
+  --bg-button-secondary: #2a2a4a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #8892b0;
+  --text-white: #fff;
+  --accent: #e94560;
+  --square-light: #e8dcc8;
+  --square-dark: #7b6b4f;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #e0e0e0;
-  background-color: #1a1a2e;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme="light"] {
+  --bg-primary: #f0f0f0;
+  --bg-secondary: #ffffff;
+  --bg-button: #4a90d9;
+  --bg-button-hover: #357abd;
+  --bg-button-secondary: #d0d0d0;
+  --text-primary: #2d2d2d;
+  --text-secondary: #666;
+  --text-white: #fff;
+  --accent: #e94560;
+  --square-light: #f0d9b5;
+  --square-dark: #b58863;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {

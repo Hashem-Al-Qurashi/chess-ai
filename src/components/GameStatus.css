@@ -4,7 +4,7 @@
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
-  background: #16213e;
+  background: var(--bg-secondary);
   color: #e0e0e0;
   transition: all 0.2s ease;
 }

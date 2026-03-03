@@ -5,6 +5,7 @@ import MoveHistory from './components/MoveHistory'
 import GameControls from './components/GameControls'
 import GameStatus from './components/GameStatus'
 import { useSound } from './hooks/useSound'
+import { useTheme } from './hooks/useTheme'
 import './App.css'
 
 export type GameMode = 'local' | 'ai'
@@ -23,6 +24,7 @@ function App() {
   const [boardFlipped, setBoardFlipped] = useState(false)
   const [soundEnabled, setSoundEnabled] = useState(true)
   const sound = useSound()
+  const { theme, toggleTheme } = useTheme()
 
   const playMoveSound = useCallback((game: Chess, captured: boolean) => {
     if (game.isCheckmate() || game.isDraw()) {
@@ -162,7 +164,12 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="title">Chess AI</h1>
+      <div className="header">
+        <h1 className="title">Chess AI</h1>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === 'dark' ? 'Light' : 'Dark'}
+        </button>
+      </div>
       <div className="game-container">
         <div className="board-section">
           <GameStatus

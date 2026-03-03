@@ -1,5 +1,5 @@
 .game-controls {
-  background: #16213e;
+  background: var(--bg-secondary);
   border-radius: 8px;
   padding: 16px;
 }
@@ -18,7 +18,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #8892b0;
+  color: var(--text-secondary);
   margin-bottom: 6px;
 }
 
@@ -35,14 +35,14 @@
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  background: #0f3460;
+  background: var(--bg-button);
   color: #e0e0e0;
   transition: all 0.15s ease;
   flex: 1;
 }
 
 .btn:hover {
-  background: #1a4a80;
+  background: var(--bg-button-hover);
   transform: translateY(-1px);
 }
 
@@ -57,7 +57,7 @@
 }
 
 .btn.btn-secondary {
-  background: #2a2a4a;
+  background: var(--bg-button-secondary);
 }
 
 .btn.btn-secondary:hover {
