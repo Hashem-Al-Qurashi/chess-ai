@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { type GameMode, type Difficulty } from '../App'
 import { type TimeControl } from '../hooks/useChessTimer'
 import './GameControls.css'
@@ -7,6 +8,7 @@ interface GameControlsProps {
   difficulty: Difficulty
   soundEnabled: boolean
   timeControl: TimeControl
+  pgn: string
   onNewGame: (mode: GameMode, difficulty?: Difficulty, color?: 'w' | 'b') => void
   onUndo: () => void
   onFlipBoard: () => void
@@ -28,6 +30,7 @@ export default function GameControls({
   difficulty,
   soundEnabled,
   timeControl,
+  pgn,
   onNewGame,
   onUndo,
   onFlipBoard,
@@ -35,6 +38,26 @@ export default function GameControls({
   onTimeControl,
   canUndo,
 }: GameControlsProps) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyPGN = async () => {
+    try {
+      await navigator.clipboard.writeText(pgn)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // Fallback for browsers without clipboard API
+      const textarea = document.createElement('textarea')
+      textarea.value = pgn
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
+  }
+
   return (
     <div className="game-controls">
       <h3>Game Controls</h3>
@@ -115,6 +138,12 @@ export default function GameControls({
             {soundEnabled ? 'Sound On' : 'Sound Off'}
           </button>
         </div>
+      </div>
+
+      <div className="control-section">
+        <button className="btn btn-secondary full-width" onClick={handleCopyPGN} disabled={!pgn}>
+          {copied ? 'Copied!' : 'Copy PGN'}
+        </button>
       </div>
     </div>
   )

@@ -325,6 +325,7 @@ function App() {
             difficulty={difficulty}
             soundEnabled={soundEnabled}
             timeControl={timerState.timeControl}
+            pgn={game.pgn()}
             onNewGame={handleNewGame}
             onUndo={handleUndo}
             onFlipBoard={handleFlipBoard}
