@@ -4,6 +4,7 @@ import Board from './components/Board'
 import MoveHistory from './components/MoveHistory'
 import GameControls from './components/GameControls'
 import GameStatus from './components/GameStatus'
+import { useSound } from './hooks/useSound'
 import './App.css'
 
 export type GameMode = 'local' | 'ai'
@@ -20,6 +21,20 @@ function App() {
   const [isThinking, setIsThinking] = useState(false)
   const [lastMove, setLastMove] = useState<{ from: string; to: string } | null>(null)
   const [boardFlipped, setBoardFlipped] = useState(false)
+  const [soundEnabled, setSoundEnabled] = useState(true)
+  const sound = useSound()
+
+  const playMoveSound = useCallback((game: Chess, captured: boolean) => {
+    if (game.isCheckmate() || game.isDraw()) {
+      sound.playGameOver()
+    } else if (game.inCheck()) {
+      sound.playCheck()
+    } else if (captured) {
+      sound.playCapture()
+    } else {
+      sound.playMove()
+    }
+  }, [sound])
 
   const makeAIMove = useCallback((currentGame: Chess) => {
     if (currentGame.isGameOver()) return
@@ -48,13 +63,15 @@ function App() {
         selectedMove = getBestMove(currentGame, 3)
       }
 
+      const captured = !!selectedMove.captured
       currentGame.move(selectedMove)
       setGame(new Chess(currentGame.fen()))
       setMoveHistory(prev => [...prev, selectedMove.san])
       setLastMove({ from: selectedMove.from, to: selectedMove.to })
+      playMoveSound(currentGame, captured)
       setIsThinking(false)
     }, 500)
-  }, [difficulty])
+  }, [difficulty, playMoveSound])
 
   const handleSquareClick = useCallback((square: string) => {
     if (isThinking) return
@@ -76,6 +93,7 @@ function App() {
           setGame(newGame)
           setMoveHistory(prev => [...prev, result.san])
           setLastMove({ from: move.from, to: move.to })
+          playMoveSound(newGame, !!move.captured)
           setSelectedSquare(null)
           setLegalMoves([])
 
@@ -166,9 +184,11 @@ function App() {
           <GameControls
             gameMode={gameMode}
             difficulty={difficulty}
+            soundEnabled={soundEnabled}
             onNewGame={handleNewGame}
             onUndo={handleUndo}
             onFlipBoard={handleFlipBoard}
+            onToggleSound={() => { sound.toggleSound(); setSoundEnabled(prev => !prev) }}
             canUndo={moveHistory.length > 0 && !isThinking}
           />
           <MoveHistory moves={moveHistory} />
