@@ -30,7 +30,12 @@ export default function MoveHistory({ moves, currentMoveIndex, onGoToMove }: Mov
 
   return (
     <div className="move-history">
-      <h3>Moves</h3>
+      <div className="moves-header">
+        <h3>Moves</h3>
+        {moves.length > 0 && (
+          <span className="moves-count">{Math.ceil(moves.length / 2)} moves</span>
+        )}
+      </div>
       <div className="moves-list" ref={listRef}>
         {pairs.length === 0 ? (
           <p className="no-moves">No moves yet</p>
