@@ -26,6 +26,27 @@
   letter-spacing: -0.02em;
 }
 
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.header-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg-button-secondary);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+  opacity: 0.8;
+}
+
 .theme-toggle {
   padding: 6px 14px;
   border: none;
