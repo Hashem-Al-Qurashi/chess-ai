@@ -10,7 +10,9 @@ interface GameControlsProps {
   timeControl: TimeControl
   pgn: string
   gameInProgress: boolean
+  autoQueen: boolean
   onNewGame: (mode: GameMode, difficulty?: Difficulty, color?: 'w' | 'b') => void
+  onToggleAutoQueen: () => void
   onUndo: () => void
   onFlipBoard: () => void
   onToggleSound: () => void
@@ -43,7 +45,9 @@ export default function GameControls({
   timeControl,
   pgn,
   gameInProgress,
+  autoQueen,
   onNewGame,
+  onToggleAutoQueen,
   onUndo,
   onFlipBoard,
   onToggleSound,
@@ -174,6 +178,9 @@ export default function GameControls({
           </button>
           <button className="btn btn-secondary" onClick={onToggleSound}>
             {soundEnabled ? 'Sound On' : 'Sound Off'}
+          </button>
+          <button className={`btn btn-secondary ${autoQueen ? 'active' : ''}`} onClick={onToggleAutoQueen}>
+            Auto Queen
           </button>
         </div>
       </div>
