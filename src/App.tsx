@@ -36,6 +36,7 @@ function App() {
   const [boardFlipped, setBoardFlipped] = useState(false)
   const [pendingPromotion, setPendingPromotion] = useState<{ from: string; to: string; color: 'w' | 'b' } | null>(null)
   const [soundEnabled, setSoundEnabled] = useState(true)
+  const [autoQueen, setAutoQueen] = useState(false)
   const [showGameOver, setShowGameOver] = useState(false)
   const [stats, setStats] = useState({ wins: 0, losses: 0, draws: 0 })
   const sound = useSound()
@@ -117,6 +118,23 @@ function App() {
 
       if (move) {
         if (move.piece === 'p' && (move.to[1] === '8' || move.to[1] === '1')) {
+          if (autoQueen) {
+            const newGame = new Chess(game.fen())
+            const result = newGame.move({ from: move.from, to: move.to, promotion: 'q' })
+            if (result) {
+              setGame(newGame)
+              playMoveSound(newGame, result)
+              setLastMove({ from: move.from, to: move.to })
+              setMoveHistory(prev => [...prev, result.san])
+              setFenHistory(prev => [...prev, newGame.fen()])
+              setViewIndex(prev => prev + 1)
+              if (gameMode === 'ai') makeAIMove(newGame)
+              switchTurn(newGame.turn())
+            }
+            setSelectedSquare(null)
+            setLegalMoves([])
+            return
+          }
           setPendingPromotion({ from: move.from, to: move.to, color: game.turn() })
           setSelectedSquare(null)
           setLegalMoves([])
@@ -177,6 +195,21 @@ function App() {
     if (!move) return
 
     if (move.piece === 'p' && (move.to[1] === '8' || move.to[1] === '1')) {
+      if (autoQueen) {
+        const newGame = new Chess(game.fen())
+        const result = newGame.move({ from: move.from, to: move.to, promotion: 'q' })
+        if (result) {
+          setGame(newGame)
+          playMoveSound(newGame, result)
+          setLastMove({ from: move.from, to: move.to })
+          setMoveHistory(prev => [...prev, result.san])
+          setFenHistory(prev => [...prev, newGame.fen()])
+          setViewIndex(prev => prev + 1)
+          if (gameMode === 'ai') makeAIMove(newGame)
+          switchTurn(newGame.turn())
+        }
+        return
+      }
       setPendingPromotion({ from: move.from, to: move.to, color: game.turn() })
       return
     }
@@ -386,7 +419,9 @@ function App() {
             timeControl={timerState.timeControl}
             pgn={game.pgn()}
             gameInProgress={moveHistory.length > 0 && !game.isGameOver()}
+            autoQueen={autoQueen}
             onNewGame={handleNewGame}
+            onToggleAutoQueen={() => setAutoQueen(prev => !prev)}
             onUndo={handleUndo}
             onFlipBoard={handleFlipBoard}
             onToggleSound={() => { sound.toggleSound(); setSoundEnabled(prev => !prev) }}
