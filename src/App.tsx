@@ -15,6 +15,7 @@ import OpeningName from './components/OpeningName'
 import FenLoader from './components/FenLoader'
 import PlayerLabel from './components/PlayerLabel'
 import DailyTip from './components/DailyTip'
+import { ecoOpenings } from './data/eco'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
 import { useChessTimer, type TimeControl } from './hooks/useChessTimer'
@@ -335,6 +336,31 @@ function App() {
     setBoardFlipped(prev => !prev)
   }, [])
 
+  const handleRandomOpening = useCallback(() => {
+    const opening = ecoOpenings[Math.floor(Math.random() * ecoOpenings.length)]
+    const newGame = new Chess()
+    newGame.loadPgn(opening.moves)
+    const history = newGame.history()
+    const fens: string[] = [new Chess().fen()]
+    const replay = new Chess()
+    for (const san of history) {
+      replay.move(san)
+      fens.push(replay.fen())
+    }
+    setGame(newGame)
+    setSelectedSquare(null)
+    setLegalMoves([])
+    setMoveHistory(history)
+    setFenHistory(fens)
+    setViewIndex(history.length - 1)
+    setLastMove(null)
+    setShowGameOver(false)
+    setResigned(null)
+    gameClock.reset()
+    resetTimer()
+    sound.playStart()
+  }, [gameClock, resetTimer, sound])
+
   const handleLoadFen = useCallback((fen: string) => {
     const newGame = new Chess(fen)
     setGame(newGame)
@@ -489,6 +515,7 @@ function App() {
             onFlipBoard={handleFlipBoard}
             onToggleSound={() => { sound.toggleSound(); setSoundEnabled(prev => !prev) }}
             onTimeControl={handleTimeControl}
+            onRandomOpening={handleRandomOpening}
             canUndo={moveHistory.length > 0 && !isThinking}
           />
           <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
