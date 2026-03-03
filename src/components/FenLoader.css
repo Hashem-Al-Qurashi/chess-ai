@@ -34,3 +34,35 @@
 .fen-toggle {
   font-size: 0.8rem;
 }
+
+.loader-tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--bg-primary);
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.loader-tab {
+  flex: 1;
+  padding: 4px 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.loader-tab.active {
+  background: var(--bg-button);
+  color: var(--text-primary);
+}
+
+.pgn-textarea {
+  resize: vertical;
+  min-height: 60px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}

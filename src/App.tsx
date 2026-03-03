@@ -346,6 +346,28 @@ function App() {
     resetTimer()
   }, [gameClock, resetTimer])
 
+  const handleLoadPgn = useCallback((pgn: string) => {
+    const newGame = new Chess()
+    newGame.loadPgn(pgn)
+    const history = newGame.history()
+    const fens: string[] = [new Chess().fen()]
+    const replay = new Chess()
+    for (const san of history) {
+      replay.move(san)
+      fens.push(replay.fen())
+    }
+    setGame(newGame)
+    setSelectedSquare(null)
+    setLegalMoves([])
+    setMoveHistory(history)
+    setFenHistory(fens)
+    setViewIndex(history.length - 1)
+    setLastMove(null)
+    setShowGameOver(false)
+    gameClock.reset()
+    resetTimer()
+  }, [gameClock, resetTimer])
+
   // Start timer on first move
   useEffect(() => {
     if (moveHistory.length === 1 && timerState.timeControl !== 'none' && timerState.activeColor === null && !timerState.isExpired) {
@@ -467,7 +489,7 @@ function App() {
             canUndo={moveHistory.length > 0 && !isThinking}
           />
           <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
-          <FenLoader currentFen={game.fen()} onLoadFen={handleLoadFen} />
+          <FenLoader currentFen={game.fen()} onLoadFen={handleLoadFen} onLoadPgn={handleLoadPgn} />
           <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} onReset={() => setStats({ wins: 0, losses: 0, draws: 0 })} />
           <ShortcutsHelp />
         </div>
