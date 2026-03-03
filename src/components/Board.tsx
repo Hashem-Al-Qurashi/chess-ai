@@ -74,7 +74,7 @@ export default function Board({
           const piece = game.get(square as Square)
           const isLight = (rowIndex + colIndex) % 2 === 0
           const isSelected = square === selectedSquare
-          const isLegal = legalMoves.includes(square) || dragLegalMoves.includes(square)
+          const isLegal = legalMoves.includes(square) || dragLegalMoves.includes(square as Square)
           const isLastMove = lastMove && (square === lastMove.from || square === lastMove.to)
           const isKingInCheck = square === kingSquare
           const isDragSource = square === dragFrom
