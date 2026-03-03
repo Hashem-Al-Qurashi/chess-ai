@@ -79,10 +79,23 @@ export function useSound() {
     setTimeout(() => createTone(ctx, 200, 0.4, 'sine', 0.25), 400)
   }, [getCtx])
 
+  const playError = useCallback(() => {
+    if (!enabledRef.current) return
+    const ctx = getCtx()
+    createTone(ctx, 150, 0.15, 'sawtooth', 0.1)
+  }, [getCtx])
+
+  const playStart = useCallback(() => {
+    if (!enabledRef.current) return
+    const ctx = getCtx()
+    createTone(ctx, 440, 0.08, 'sine', 0.15)
+    setTimeout(() => createTone(ctx, 660, 0.1, 'sine', 0.15), 80)
+  }, [getCtx])
+
   const toggleSound = useCallback(() => {
     enabledRef.current = !enabledRef.current
     return enabledRef.current
   }, [])
 
-  return { playMove, playCapture, playCheck, playCastle, playPromotion, playGameOver, toggleSound, enabled: enabledRef }
+  return { playMove, playCapture, playCheck, playCastle, playPromotion, playGameOver, playError, playStart, toggleSound, enabled: enabledRef }
 }
