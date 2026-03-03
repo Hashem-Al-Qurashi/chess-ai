@@ -1,5 +1,5 @@
 .piece {
-  font-size: min(3.2rem, 9vw);
+  font-size: min(3.3rem, 9.5vw);
   line-height: 1;
   cursor: pointer;
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
