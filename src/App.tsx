@@ -10,6 +10,7 @@ import GameOverModal from './components/GameOverModal'
 import ChessTimer from './components/ChessTimer'
 import EvalBar from './components/EvalBar'
 import GameStats from './components/GameStats'
+import ShortcutsHelp from './components/ShortcutsHelp'
 import FenLoader from './components/FenLoader'
 import { useSound } from './hooks/useSound'
 import { useTheme } from './hooks/useTheme'
@@ -451,6 +452,7 @@ function App() {
           <MoveHistory moves={moveHistory} currentMoveIndex={viewIndex} onGoToMove={handleGoToMove} />
           <FenLoader currentFen={game.fen()} onLoadFen={handleLoadFen} />
           <GameStats wins={stats.wins} losses={stats.losses} draws={stats.draws} />
+          <ShortcutsHelp />
         </div>
       </div>
       {pendingPromotion && (
