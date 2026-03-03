@@ -73,9 +73,22 @@
 }
 
 @media (max-width: 768px) {
+  .app {
+    padding: 12px 8px;
+  }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
   .game-container {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
   .side-panel {
@@ -83,11 +96,39 @@
     max-width: 480px;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
   }
 
   .side-panel > * {
     flex: 1;
-    min-width: 200px;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 8px 4px;
+  }
+
+  .header {
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .game-container {
+    gap: 8px;
+  }
+
+  .side-panel {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .side-panel > * {
+    min-width: unset;
   }
 }
