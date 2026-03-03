@@ -48,6 +48,18 @@
   background: radial-gradient(circle, #ff4444 0%, transparent 70%);
 }
 
+.square.highlighted {
+  background-color: rgba(235, 97, 80, 0.8) !important;
+}
+
+.square.light.highlighted {
+  background-color: rgba(235, 97, 80, 0.7) !important;
+}
+
+.square.dark.highlighted {
+  background-color: rgba(195, 60, 50, 0.85) !important;
+}
+
 .square:hover {
   filter: brightness(1.1);
 }
