@@ -470,6 +470,12 @@ function App() {
           onClose={() => setShowGameOver(false)}
         />
       )}
+      <footer className="app-footer">
+        <span>Built with React + chess.js</span>
+        <a href="https://github.com/Hashem-Al-Qurashi/chess-ai" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+      </footer>
     </div>
   )
 }
