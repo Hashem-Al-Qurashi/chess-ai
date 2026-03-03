@@ -9,10 +9,19 @@ interface GameStatusProps {
   gameMode: GameMode
   playerColor: 'w' | 'b'
   moveHistory: string[]
+  elapsed: number
 }
 
-export default function GameStatus({ game, isThinking, gameMode, playerColor, moveHistory }: GameStatusProps) {
+function formatElapsed(ms: number): string {
+  const totalSecs = Math.floor(ms / 1000)
+  const mins = Math.floor(totalSecs / 60)
+  const secs = totalSecs % 60
+  return `${mins}:${secs.toString().padStart(2, '0')}`
+}
+
+export default function GameStatus({ game, isThinking, gameMode, playerColor, moveHistory, elapsed }: GameStatusProps) {
   const openingName = identifyOpening(moveHistory)
+  const moveNumber = Math.floor(moveHistory.length / 2) + 1
   const getStatus = (): string => {
     if (game.isCheckmate()) {
       const winner = game.turn() === 'w' ? 'Black' : 'White'
@@ -46,9 +55,17 @@ export default function GameStatus({ game, isThinking, gameMode, playerColor, mo
 
   return (
     <div className={`game-status ${statusClass}`}>
-      {getStatus()}
-      {openingName && !game.isGameOver() && (
-        <span className="opening-name"> — {openingName}</span>
+      <div className="status-main">
+        {getStatus()}
+        {openingName && !game.isGameOver() && (
+          <span className="opening-name"> — {openingName}</span>
+        )}
+      </div>
+      {moveHistory.length > 0 && (
+        <div className="status-meta">
+          <span>Move {moveNumber}</span>
+          <span>{formatElapsed(elapsed)}</span>
+        </div>
       )}
     </div>
   )
