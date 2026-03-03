@@ -18,6 +18,7 @@ interface GameControlsProps {
   onFlipBoard: () => void
   onToggleSound: () => void
   onTimeControl: (tc: TimeControl) => void
+  onRandomOpening: () => void
   canUndo: boolean
 }
 
@@ -54,6 +55,7 @@ export default function GameControls({
   onFlipBoard,
   onToggleSound,
   onTimeControl,
+  onRandomOpening,
   canUndo,
 }: GameControlsProps) {
   const [copied, setCopied] = useState(false)
@@ -116,6 +118,9 @@ export default function GameControls({
             onClick={() => confirmNewGame('ai', difficulty, 'w')}
           >
             vs AI
+          </button>
+          <button className="btn btn-secondary" onClick={onRandomOpening} title="Start from a random ECO opening">
+            Random Opening
           </button>
         </div>
       </div>
