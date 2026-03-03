@@ -69,3 +69,7 @@
   cursor: not-allowed;
   transform: none;
 }
+
+.btn.full-width {
+  width: 100%;
+}
