@@ -452,13 +452,26 @@ function App() {
     onFlip: handleFlipBoard,
   })
 
+  const handleFullscreen = useCallback(() => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen()
+    } else {
+      document.documentElement.requestFullscreen()
+    }
+  }, [])
+
   return (
     <div className="app">
       <div className="header">
         <h1 className="title">Chess AI</h1>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'dark' ? 'Light' : 'Dark'}
-        </button>
+        <div className="header-actions">
+          <button className="header-btn" onClick={handleFullscreen} title="Toggle fullscreen">
+            {document.fullscreenElement ? 'Exit FS' : 'Fullscreen'}
+          </button>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
+        </div>
       </div>
       <div className="game-container">
         <div className="board-section">
