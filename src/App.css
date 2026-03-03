@@ -57,6 +57,12 @@
   gap: 12px;
 }
 
+.board-with-eval {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
 .side-panel {
   display: flex;
   flex-direction: column;
